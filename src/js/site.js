@@ -2,6 +2,10 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+$('header').load('_nav.html');
+
+
+
 document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
   const dropZoneElement = inputElement.closest(".drop-zone");
   dropZoneElement.addEventListener("click", (e) => {
