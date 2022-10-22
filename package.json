@@ -1,8 +1,8 @@
 {
   "private": true,
   "engines": {
-		"node": "16.14.2"
-	},
+    "node": "16.14.2"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -12,5 +12,11 @@
   },
   "devDependencies": {
     "nuxt": "3.0.0-rc.11"
+  },
+  "dependencies": {
+    "@zhuowenli/vue-feather-icons": "^5.0.2",
+    "add": "^2.0.6",
+    "feather-icons": "^4.29.0",
+    "yarn": "^1.22.19"
   }
 }
