@@ -18,27 +18,29 @@
       <FilePreview v-for="file of files" :key="file.id" :file="file" tag="li" @cancel="removeFile" />
     </ul>
   </DropZone>
-  <button class="upload-button" @click="upload">Upload</button>
-  <label v-if="uploadResult">{{uploadResultMessage}}</label>
+  <div>
+    <label v-if="true">{{ uploadResultMessage }}</label>
+  </div>  
+  <div>
+    <button class="upload-button" @click="upload">Upload</button>
+  </div>
+  <PhotoGallery :images="photoGallery.files"></PhotoGallery>
 </template>
 
 <script setup>
 import useFileList from '../compositions/file-list.js'
 import DropZone from './DropZone.vue'
 import FilePreview from './FilePreview.vue'
-//import ref from 'vue';
+import PhotoGallery from './PhotoGallery.vue';
+import { ref } from 'vue';
 
-const { files, addFiles, removeFile } = useFileList()
-defineProps({
-  uploadResult:{
-    type:Boolean,
-    default:false
-  },
-  uploadResultMessage:{
-    type:String,
-    default:''
-  }
-})
+const { files, addFiles, removeFile, removeFiles } = useFileList()
+const uploadResult = ref(true);
+const uploadResultMessage= ref('');
+const photoGallery = ref([]);
+
+getUploads();
+
 
 function onInputChange(e) {
   addFiles(e.target.files)
@@ -55,12 +57,25 @@ function upload() {
     body: data
   }).then((response) => response.json())
   .then((data) => {
-    uploadResult = true;
-    uploadResultMessage = data
+    uploadResult.value = true;
+    uploadResultMessage.value = data.message;
+    removeFiles();
+    getUploads();
   })
   .catch((error) => {
-    uploadResult = true;
-    uploadResultMessage = error
+    uploadResult.value = true;
+    uploadResultMessage.value = error
+  });
+}
+
+function getUploads() {
+  fetch('/api/BlobLister', {
+    method: 'GET',
+  }).then((response) => response.json())
+  .then((data) => {
+    photoGallery.value = data;
+  })
+  .catch((error) => {
   });
 }
 </script>

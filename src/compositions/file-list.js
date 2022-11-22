@@ -20,7 +20,11 @@ export default function () {
         if (index > -1) files.value.splice(index, 1)
     }
 
-    return { files, addFiles, removeFile }
+    function removeFiles(){
+        files.value.map((file) => removeFile(file));
+    }
+
+    return { files, addFiles, removeFile, removeFiles }
 }
 
 class UploadableFile {

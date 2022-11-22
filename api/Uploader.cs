@@ -7,7 +7,7 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using Events.Services;
+using Events.Repositories;
 
 namespace Events.Uploader
 {
@@ -24,26 +24,18 @@ namespace Events.Uploader
 
                 if (formData?.Files?.Count > 0)
                 {
-                    BlobStorage _blobStorage = new BlobStorage("profile-uploads", Environment.GetEnvironmentVariable("UploadStorage"));
+                    AzureStorage _blobStorage = new AzureStorage(Environment.GetEnvironmentVariable("UploadStorage"), "profile-uploads");
 
                     var file = formData.Files[0];
-                    var filePath = Path.GetTempFileName();
-                    Guid fileNamePrefixGuid = Guid.NewGuid();
-
-                    using (var stream = new MemoryStream())
-                    {
-                        file.CopyToAsync(stream).ConfigureAwait(false);
-                        _blobStorage.UploadFile(fileNamePrefixGuid + file.FileName, stream);
-                    }
+                    var upload = await _blobStorage.UploadAsync(file);
+                    return new JsonResult(new { message = upload.Status + upload.Error + "Photo upload succeeded!" });
                 }
-                return new JsonResult(new { message = "Photo upload succeeded!" });
             }
             catch (Exception)
             {
                 return new JsonResult(new { message = "Photo failed to upload." });
             }
-
-
+            return new JsonResult(new { message = "Photo failed to upload." });
         }
     }
 }
