@@ -1,5 +1,5 @@
 <template>
-  <DropZone class="drop-zone" @files-dropped="addFiles" #default="{ dropZoneActive }">
+  <DropZone class="drop-zone" @files-dropped="addFiles" @click="focusInput" #default="{ dropZoneActive }">
     <label class="drop-zone__prompt" for="file-input">
       <span v-if="dropZoneActive">
         <span>Drop Them Here </span>
@@ -11,17 +11,16 @@
           or <strong><em>click here</em></strong> to select files
         </span>
       </span>
-
-      <input class="drop-zone__input" type="file" id="file-input" @change="onInputChange" />
     </label>
+    <input class="drop-zone__input" type="file" id="file-input" @change="onInputChange" />
     <ul class="image-list" v-show="files.length">
       <FilePreview v-for="file of files" :key="file.id" :file="file" tag="li" @cancel="removeFile" />
     </ul>
   </DropZone>
   <div>
-    <label v-if="true">{{ uploadResultMessage }}</label>
-  </div>  
-  <div>
+    <FormMessage v-if="uploadResult" :message="uploadResultMessage" :success-state="successState"></FormMessage>
+  </div>
+  <div class="button-container">
     <button class="upload-button" @click="upload">Upload</button>
   </div>
   <PhotoGallery :images="photoGallery.files"></PhotoGallery>
@@ -36,7 +35,8 @@ import { ref } from 'vue';
 
 const { files, addFiles, removeFile, removeFiles } = useFileList()
 const uploadResult = ref(true);
-const uploadResultMessage= ref('');
+const uploadResultMessage = ref('');
+const successState = ref('');
 const photoGallery = ref([]);
 
 getUploads();
@@ -45,6 +45,10 @@ getUploads();
 function onInputChange(e) {
   addFiles(e.target.files)
   e.target.value = null
+}
+
+function focusInput() {
+  document.getElementById('file-input').click();
 }
 
 function upload() {
@@ -56,33 +60,34 @@ function upload() {
     method: 'POST',
     body: data
   }).then((response) => response.json())
-  .then((data) => {
-    uploadResult.value = true;
-    uploadResultMessage.value = data.message;
-    removeFiles();
-    getUploads();
-  })
-  .catch((error) => {
-    uploadResult.value = true;
-    uploadResultMessage.value = error
-  });
+    .then((data) => {
+      uploadResult.value = true;
+      uploadResultMessage.value = data.message;
+      successState.value = 'success';
+      removeFiles();
+      getUploads();
+    })
+    .catch((error) => {
+      uploadResult.value = true;
+      uploadResultMessage.value = error
+    });
 }
 
 function getUploads() {
   fetch('/api/BlobLister', {
     method: 'GET',
   }).then((response) => response.json())
-  .then((data) => {
-    photoGallery.value = data;
-  })
-  .catch((error) => {
-  });
+    .then((data) => {
+      photoGallery.value = data;
+    })
+    .catch((error) => {
+    });
 }
 </script>
 
 <style>
 .drop-zone {
-  margin: 50px;
+  margin: 20px;
   background-color: #ffffff;
   min-width: 200px;
   height: 200px;
@@ -96,8 +101,8 @@ function getUploads() {
   font-size: 20px;
   cursor: pointer;
   color: #cccccc;
-  border: 4px dashed #7082D0;
-  border-radius: 10px;
+  box-shadow: 0px 3px 6px #000000a8;
+  opacity: 1;
 }
 
 .drop-zone--over {
@@ -116,8 +121,17 @@ ul {
   list-style-type: none;
 }
 
+.button-container {
+  margin: 5px auto;
+  width: 300px;
+  text-align: center;
+}
+
 .upload-button {
+  box-shadow: 0px 3px 6px #000000a8;
+  width: 150px;
+  height: 50px;
   margin-top: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
 }
 </style>

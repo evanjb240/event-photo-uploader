@@ -28,7 +28,7 @@ namespace Events.Uploader
 
                     var file = formData.Files[0];
                     var upload = await _blobStorage.UploadAsync(file);
-                    return new JsonResult(new { message = upload.Status + upload.Error + "Photo upload succeeded!" });
+                    return new JsonResult(new { message = "Photo upload succeeded!" });
                 }
             }
             catch (Exception)

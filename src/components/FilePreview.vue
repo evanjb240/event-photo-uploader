@@ -2,7 +2,7 @@
     <component :is="tag" >
         <div class="container">
             <img class="file-preview" :src="file.url" :alt="file.file.name" :title="file.file.name" />
-            <button @click="$emit('cancel', file)" class="close-icon btn" aria-label="Remove">X</button>
+            <button @click.stop="$emit('cancel', file)" class="close-icon btn" aria-label="Remove">X</button>
         </div>
     </component>
 </template>
