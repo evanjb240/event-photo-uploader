@@ -45,14 +45,24 @@ getUploads();
 function onInputChange(e) {
   addFiles(e.target.files)
   e.target.value = null
+  uploadResult.value = false;
+  uploadResultMessage.value = "";
+  successState.value = "";
 }
 
-function focusInput() {
+function focusInput(e) {
   document.getElementById('file-input').click();
 }
 
 function upload() {
   var data = new FormData();
+
+  if (files.value.length == 0) {
+    uploadResult.value = true;
+    uploadResultMessage.value = "Attach a file!";
+    successState.value = "error";
+    return;
+  }
 
   data.append('file', files.value[0].file);
 
