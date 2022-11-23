@@ -114,7 +114,7 @@ function getUploads() {
 }
 
 .drop-zone__prompt {
-  color: var(--primary-color);
+  color: #807e7e;
 }
 
 ul {
@@ -128,6 +128,8 @@ ul {
 }
 
 .upload-button {
+  font-size: 1rem;
+  font-weight: 500;
   box-shadow: 0px 3px 6px #000000a8;
   width: 150px;
   height: 50px;
