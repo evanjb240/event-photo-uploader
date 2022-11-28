@@ -143,7 +143,6 @@ namespace Events.Repositories
             // Return all files to the requesting method
             return files;
         }
-
         public async Task<BlobResponseDTO> DeleteAsync(string blobFilename)
         {
             BlobContainerClient client = new BlobContainerClient(_storageConnectionString, _storageContainerName);
