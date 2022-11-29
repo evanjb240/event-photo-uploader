@@ -16,7 +16,7 @@ namespace Events.RSVp
 {
     public static class RSVP
     {
-        [FunctionName("RSVP")]
+        [FunctionName("RSVPQuery")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
@@ -31,12 +31,14 @@ namespace Events.RSVp
                     PlusOne = 1
                 };
 
-                entity.PartitionKey = entity.Code;
-                string Id = Guid.NewGuid().ToString();
-                entity.Id = Id;
-                entity.RowKey = Id;
-                var createdEntity = await _storageService.UpsertEntityAsync(entity);
-                return new JsonResult(new { message = "RSVP successful!" });
+                // entity.PartitionKey = entity.Code;
+                // string Id = Guid.NewGuid().ToString();
+                // entity.Id = Id;
+                // entity.RowKey = Id;
+                // var createdEntity = await _storageService.UpsertEntityAsync(entity);
+
+                var returnedEntity = await _storageService.GetEntityAsync(entity.Code, entity.LastName);
+                return new JsonResult(new { message = returnedEntity.LastName });
             }
             catch (Exception e)
             {

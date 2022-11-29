@@ -1,9 +1,9 @@
 
+using System.Linq;
 using System.Threading.Tasks;
 using Azure.Data.Tables;
 using Events.Databases;
 using Events.Interfaces;
-using Microsoft.Extensions.Configuration;
 
 namespace Events.Services
 {
@@ -17,10 +17,15 @@ namespace Events.Services
             _connectionString = connectionString;
         }
 
-        public async Task<RSVPEntity> GetEntityAsync(string code, string id)
+        public async Task<RSVPEntity> GetEntityAsync(string code, string lastName)
         {
             var tableClient = await GetTableClient();
-            return await tableClient.GetEntityAsync<RSVPEntity>(code, id);
+
+            var ret = tableClient.QueryAsync<RSVPEntity>(x=> x.Code == code && x.LastName == lastName, 1);
+            if(ret == null){
+                return null;
+            }
+            return await ret.FirstOrDefaultAsync();;  
         }
 
         public async Task<RSVPEntity> UpsertEntityAsync(RSVPEntity entity)
