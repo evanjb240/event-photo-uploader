@@ -93,11 +93,22 @@ function getUploads() {
     .catch((error) => {
     });
 }
+const events = ['dragenter', 'dragover', 'dragleave', 'drop']
 
-document.addEventListener('touchend', function ( e )  {
-  e.preventDefault();
-  e.stopPropagation();
-});
+onMounted(() => {
+  document.addEventListener('touchend', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+})
+
+onUnmounted(() => {
+  document.removeEventListener('touchend', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+})
+
 </script>
 
 <style>
