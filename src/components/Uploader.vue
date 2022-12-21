@@ -1,5 +1,5 @@
 <template>
-  <DropZone class="drop-zone" @files-dropped="addFiles" @click="focusInput" #default="{ dropZoneActive }">
+  <DropZone class="drop-zone" @files-dropped="addFiles" @click.stop="focusInput" #default="{ dropZoneActive }">
     <label class="drop-zone__prompt" for="file-input">
       <span v-if="dropZoneActive">
         <span>Drop Them Here </span>
