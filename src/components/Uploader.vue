@@ -93,6 +93,11 @@ function getUploads() {
     .catch((error) => {
     });
 }
+
+document.addEventListener('touchend', function ( e )  {
+  e.preventDefault();
+  e.stopPropagation();
+});
 </script>
 
 <style>
