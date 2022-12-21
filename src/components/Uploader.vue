@@ -97,14 +97,12 @@ const events = ['dragenter', 'dragover', 'dragleave', 'drop']
 
 onMounted(() => {
   document.addEventListener('touchend', function (e) {
-    e.preventDefault();
     e.stopPropagation();
   });
 })
 
 onUnmounted(() => {
   document.removeEventListener('touchend', function (e) {
-    e.preventDefault();
     e.stopPropagation();
   });
 })
