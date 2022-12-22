@@ -1,11 +1,11 @@
 <template>
   <DropZone class="drop-zone" @files-dropped="addFiles" #default="{ dropZoneActive }">
     <label class="drop-zone__prompt" for="file-input">
-      <span v-if="dropZoneActive">
+      <span class="drop-zone__span" v-if="dropZoneActive">
         <span>Drop Them Here </span>
         <span class="smaller">to add them</span>
       </span>
-      <span v-else>
+      <span class="drop-zone__span" v-else>
         <span>Drag Your Files Here</span>
         <span class="smaller">
           or <strong><em>click here</em></strong> to select files
@@ -48,13 +48,6 @@ function onInputChange(e) {
   uploadResult.value = false;
   uploadResultMessage.value = "";
   successState.value = "";
-}
-
-function focusInput(event) {
-  event = event || window.event;
-    if(event.target.id != 'file-input'){
-      document.getElementById('file-input').click();
-    }
 }
 
 function upload() {
@@ -126,9 +119,15 @@ function getUploads() {
   display: none;
 }
 
+
+
 .drop-zone__prompt {
   width:100%;
   height:100%;
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  text-align: center;
   color: #807e7e;
 }
 
