@@ -50,8 +50,11 @@ function onInputChange(e) {
   successState.value = "";
 }
 
-function focusInput(e) {
-  document.getElementById('file-input').click();
+function focusInput(event) {
+  event = event || window.event;
+    if(event.target.id != 'filechose_button'){
+      document.getElementById('file-input').click();
+    }
 }
 
 function upload() {
