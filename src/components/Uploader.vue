@@ -126,7 +126,6 @@ function getUploads() {
   height:100%;
   display: block;
   text-align: center;
-  line-height: 200px;
   text-align: center;
   color: #807e7e;
 }
