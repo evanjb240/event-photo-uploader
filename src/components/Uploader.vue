@@ -52,7 +52,7 @@ function onInputChange(e) {
 
 function focusInput(event) {
   event = event || window.event;
-    if(event.target.id != 'filechose_button'){
+    if(event.target.id != 'file-input'){
       document.getElementById('file-input').click();
     }
 }
