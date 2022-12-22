@@ -1,5 +1,5 @@
 <template>
-  <DropZone class="drop-zone" @files-dropped="addFiles" @click.stop="focusInput" #default="{ dropZoneActive }">
+  <DropZone class="drop-zone" @files-dropped="addFiles" #default="{ dropZoneActive }">
     <label class="drop-zone__prompt" for="file-input">
       <span v-if="dropZoneActive">
         <span>Drop Them Here </span>
@@ -96,26 +96,6 @@ function getUploads() {
     .catch((error) => {
     });
 }
-const events = ['dragenter', 'dragover', 'dragleave', 'drop']
-
-onMounted(() => {
-  document.addEventListener('touchend', function (e) {
-    e.stopPropagation();
-  });
-  document.addEventListener('touchstart', function (e) {
-    e.stopPropagation();
-  });
-})
-
-onUnmounted(() => {
-  document.removeEventListener('touchend', function (e) {
-    e.stopPropagation();
-  });
-  document.removeEventListener('touchstart', function (e) {
-    e.stopPropagation();
-  });
-})
-
 </script>
 
 <style>
@@ -147,6 +127,8 @@ onUnmounted(() => {
 }
 
 .drop-zone__prompt {
+  width:100%;
+  height:100%;
   color: #807e7e;
 }
 
