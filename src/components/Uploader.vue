@@ -102,10 +102,16 @@ onMounted(() => {
   document.addEventListener('touchend', function (e) {
     e.stopPropagation();
   });
+  document.addEventListener('touchstart', function (e) {
+    e.stopPropagation();
+  });
 })
 
 onUnmounted(() => {
   document.removeEventListener('touchend', function (e) {
+    e.stopPropagation();
+  });
+  document.removeEventListener('touchstart', function (e) {
     e.stopPropagation();
   });
 })
