@@ -23,11 +23,18 @@ namespace Events.RSVp
         {
             try
             {
+                string requestBody = String.Empty;
+                using (StreamReader streamReader =  new  StreamReader(req.Body))
+                {
+                    requestBody = await streamReader.ReadToEndAsync();
+                }
+                dynamic data = JsonConvert.DeserializeObject(requestBody);  
                 RSVPStorageService _storageService = new RSVPStorageService(Environment.GetEnvironmentVariable("UploadStorage"));
-                RSVPEntity entity = new RSVPEntity(){
-                    Code = "12345",
-                    FirstName = "Evan",
-                    LastName = "Bauer",
+                RSVPEntity entity = new RSVPEntity()
+                {
+                    FirstName = data?.firstName,
+                    LastName = data?.lastName,
+                    Code = data?.code,
                     PlusOne = 1
                 };
 
@@ -38,11 +45,16 @@ namespace Events.RSVp
                 // var createdEntity = await _storageService.UpsertEntityAsync(entity);
 
                 var returnedEntity = await _storageService.GetEntityAsync(entity.Code, entity.LastName);
-                return new JsonResult(new { message = returnedEntity.LastName });
+                if (returnedEntity == null)
+                {
+                    return new JsonResult(new { StatusCodes.Status404NotFound, message = "Code combination not found" });
+                }
+                return new JsonResult(new { StatusCodes.Status200OK, message = returnedEntity.LastName });
+
             }
             catch (Exception e)
             {
-                return new JsonResult(new { message = e.Data + "RSVP failed to save." });
+                return new JsonResult(new { message = e.Message + "RSVP failed to save." + req.Body });
             }
         }
     }
