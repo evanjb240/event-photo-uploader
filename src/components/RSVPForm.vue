@@ -203,7 +203,7 @@ fieldset{
 }
 
 .cf {
-    *zoom: 1;
+    zoom: 1;
 }
 
 .wrapper{
