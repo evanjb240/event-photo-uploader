@@ -1,5 +1,5 @@
 <template>
-  <DropZone class="drop-zone" @files-dropped="addFiles" #default="{ dropZoneActive }">
+    <DropZone class="drop-zone" @files-dropped="addFiles" #default="{ dropZoneActive }">
     <label class="drop-zone__prompt" for="file-input">
       <span class="drop-zone__span" v-if="dropZoneActive">
         <span>Drop Them Here </span>
@@ -16,14 +16,14 @@
     <ul class="image-list" v-show="files.length">
       <FilePreview v-for="file of files" :key="file.id" :file="file" tag="li" @cancel="removeFile" />
     </ul>
-  </DropZone>
-  <div>
-    <FormMessage v-if="uploadResult" :message="uploadResultMessage" :success-state="successState"></FormMessage>
-  </div>
-  <div class="button-container">
-    <button class="upload-button" @click="upload">Upload</button>
-  </div>
-  <PhotoGallery :images="photoGallery.files"></PhotoGallery>
+    </DropZone>
+    <div>
+      <FormMessage v-if="uploadResult" :message="uploadResultMessage" :success-state="successState"></FormMessage>
+    </div>
+    <div class="button-container">
+      <button class="upload-button" @click="upload">Upload</button>
+    </div>
+    <PhotoGallery :images="photoGallery.files"></PhotoGallery>
 </template>
 
 <script setup>
@@ -91,7 +91,8 @@ function getUploads() {
 }
 </script>
 
-<style>
+<style scoped>
+
 .drop-zone {
   margin: 20px;
   background-color: #ffffff;
