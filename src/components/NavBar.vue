@@ -26,7 +26,7 @@ export default {
 </script>
 
 <template>
-    <nav :class="nav">
+    <nav class="nav" :class="nav">
         <NuxtLink to="/" @click="nav = 'topnav'">Photo Uploader</NuxtLink>
         <NuxtLink to="/" @click="nav = 'topnav'">Home</NuxtLink>
         <NuxtLink to="/Uploader" @click="nav = 'topnav'">Photo Upload</NuxtLink>
@@ -41,6 +41,13 @@ export default {
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav{
+    position:fixed;
+    min-height:50px;
+    top:0;
+    width:100%;
 }
 
 .topnav {
@@ -85,7 +92,7 @@ body {
 
 @media screen and (max-width: 600px) {
     .topnav.responsive {
-        position: relative;
+        position: fixed;
     }
 
     .topnav.responsive .icon {

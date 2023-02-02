@@ -1,6 +1,13 @@
 <template>
     <div>
         <NavBar />
-        <slot />
+        <div class="main">
+            <slot />
+        </div>
     </div>
 </template>
+<style scoped>
+.main{
+    margin-top:50px;
+}
+</style>

@@ -26,7 +26,6 @@ defineProps({
   margin-top: 15px;
   overflow: hidden;
   background-size: cover;
-  position: relative;
   padding: 3px;
   border-radius: 4px;
   border: 2px solid #e7e7e7;
