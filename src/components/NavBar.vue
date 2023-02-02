@@ -30,7 +30,7 @@ export default {
         <NuxtLink to="/" @click="nav = 'topnav'">Photo Uploader</NuxtLink>
         <NuxtLink to="/" @click="nav = 'topnav'">Home</NuxtLink>
         <NuxtLink to="/Uploader" @click="nav = 'topnav'">Photo Upload</NuxtLink>
-        <NuxtLink to="Privacy" @click="nav = 'topnav'">Privacy</NuxtLink>
+        <NuxtLink to="/RSVP" @click="nav = 'topnav'">RSVP</NuxtLink>
         <a href="javascript:void(0);" class="icon">
             <menu-icon size="1.5x" @click="navBar"></menu-icon>
         </a>
