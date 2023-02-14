@@ -12,7 +12,7 @@
         </span>
       </span>
     </label>
-    <input class="drop-zone__input" type="file" accept="image/*" id="file-input" @change="onInputChange" />
+    <input class="drop-zone__input" type="file" accept="image/*" id="file-input" multiple @change="onInputChange" />
     <ul class="image-list" v-show="files.length">
       <FilePreview v-for="file of files" :key="file.id" :file="file" tag="li" @cancel="removeFile" />
     </ul>
