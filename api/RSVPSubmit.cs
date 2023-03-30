@@ -14,9 +14,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace Events.RSVp
 {
-    public static class RSVP
+    public static class RSVPSubmit
     {
-        [FunctionName("RSVPQuery")]
+        [FunctionName("RSVPSubmit")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
@@ -30,20 +30,24 @@ namespace Events.RSVp
                 }
                 RSVPEntity entity = JsonConvert.DeserializeObject<RSVPEntity>(requestBody);  
                 RSVPStorageService _storageService = new RSVPStorageService(Environment.GetEnvironmentVariable("UploadStorage"));
-                 
 
-                // entity.PartitionKey = entity.Code;
-                // string Id = Guid.NewGuid().ToString();
-                // entity.Id = Id;
-                // entity.RowKey = Id;
-                // var createdEntity = await _storageService.UpsertEntityAsync(entity);
+                if(string.IsNullOrEmpty(entity.PartitionKey)){
+                    entity.PartitionKey = entity.Code;
+                }
+                if(string.IsNullOrEmpty(entity.RowKey)){
+                    string id = Guid.NewGuid().ToString();
+                    entity.Id = id;
+                    entity.RowKey = id;
+                }
 
-                var returnedEntity = await _storageService.GetEntityAsync(entity.Code, entity.LastName);
-                if (returnedEntity == null)
+                //var returnedEntity = await _storageService.GetEntityAsync(entity.Code, entity.LastName);
+                /*if (returnedEntity == null)
                 {
                     return new JsonResult(new { StatusCodes.Status404NotFound, message = "Code combination not found" });
-                }
-                return new JsonResult(new { StatusCodes.Status200OK, message = returnedEntity.LastName });
+                }*/
+                var createdEntity = await _storageService.UpsertEntityAsync(entity);
+
+                return new JsonResult(new { StatusCodes.Status200OK, message = createdEntity });
 
             }
             catch (Exception e)

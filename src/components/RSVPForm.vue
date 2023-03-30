@@ -1,75 +1,94 @@
 <template>
-    <div class="container">
-        <div class="wrapper">
+    <div class="form-container">
+    <div class="wrapper">
         <ul class="steps">
             <li :class="{isActive: activeStep==1}">Step 1</li>
             <li :class="{isActive: activeStep==2}">Step 2</li>
             <li :class="{isActive: activeStep==3}">Step 3</li>
         </ul>
         <form class="form-wrapper">
-            <fieldset class="section" :class="{isActive: activeStep == 1}">
+            <div class="section" :class="{isActive: activeStep == 1}">
                 <div class="row">
                     <div>
-                        <input type="text" placeholder="First Name" v-model="lookupData.firstName" />
+                        <input type="text" placeholder="First Name" v-model="formData.FirstName" />
                     </div>
                     <div>
-                        <input type="text" placeholder="Last Name" v-model="lookupData.lastName" />
+                        <input type="text" placeholder="Last Name" v-model="formData.LastName" />
                     </div>
                     <div>
-                        <input type="text" placeholder="Enter your code" v-model="lookupData.code" />
+                        <input type="text" placeholder="Enter your code" v-model="formData.Code" />
                     </div>
                 </div>
                 <div v-if="inviteValidation">An error has occurred. Please make sure all fields are filled in.</div>
                 <div>
                     <div class="button" @click="inviteLookup">Lookup Invitation</div>
                 </div>
-            </fieldset>
-            <fieldset class="section" :class="{isActive: activeStep == 2 }">
+            </div>
+            <div class="section" :class="{isActive: activeStep == 2 }">
                 <h3>Will you attend?</h3>
                 <label>Please respond by xxxx</label>
                 <div class="row cf">
-                    <div class="six col">
-                        <input type="radio" name="rsvp_accept" id="rsvp_accept" value="Accept" v-model="formData.rsvpChoice" checked>
+                    <div class="four col">
+                        <input type="radio" name="rsvp_accept" id="rsvp_accept" value="Accept" v-model="formData.RSVPDecision" checked>
                         <label for="rsvp_accept">
                             <h4>Gladly Accept</h4>
                         </label>
                     </div>
-                    <div class="six col">
-                        <input type="radio" name="rsvp_decline" id="rsvp_decline" value="Decline" v-model="formData.rsvpChoice">
+                    <div class="four col">
+                        <input type="radio" name="rsvp_decline" id="rsvp_decline" value="Decline" v-model="formData.RSVPDecision">
                         <label for="rsvp_decline">
                             <h4>Regretfully Decline</h4>
                         </label>
                     </div>
+                    <div class="four col">
+                        <input type="radio" name="rsvp_montana" id="rsvp_montana" value="Montana" v-model="formData.RSVPDecision">
+                        <label for="rsvp_montana">
+                            <h4>Montana Reception</h4>
+                        </label>
+                    </div>
                 </div>
                 <div class="row button" @click="checkAttendance">Next</div>
-            </fieldset>
-            <fieldset v-if="formData.rsvpChoice == 'Accept'" class="section" :class="{isActive: activeStep == 3 }">
+            </div>
+            <div v-if="formData.RSVPDecision == 'Accept'" class="section" :class="{isActive: activeStep == 3 }">
                 <form @submit.prevent="submit">
                     <div>
                         <label for="fname">Please add a food choice:</label>
                     </div>
                     <div class="row cf">
                         <div class="four col">
-                            <input type="radio" id="rsvp_food_1" v-model="formData.foodChoice" name="rsvp_food_choice"
+                            <input type="radio" id="rsvp_food_1" v-model="formData.FoodChoice" name="rsvp_food_choice"
                             value="Salmon">
                             <label for="rsvp_food_1"><h4>Salmon</h4></label>
                         </div>
                         <div class="four col">
-                            <input type="radio" id="rsvp_food_2" v-model="formData.foodChoice" name="rsvp_food_choice"
+                            <input type="radio" id="rsvp_food_2" v-model="formData.FoodChoice" name="rsvp_food_choice"
                             value="Chicken">
                             <label for="rsvp_food_2"><h4>Chicken</h4></label>
                         </div>
                         <div class="four col">
-                            <input type="radio" id="rsvp_food_3" v-model="formData.foodChoice" name="rsvp_food_choice"
+                            <input type="radio" id="rsvp_food_3" v-model="formData.FoodChoice" name="rsvp_food_choice"
                             value="Vegetarian">
                             <label for="rsvp_food_3"><h4>Vegetarian</h4></label>
                         </div>
                     </div>
                     <input class="row button" type="submit" value="Submit" @submit="submit">
                 </form>
-            </fieldset>
-            <div v-if="formData.rsvpChoice == 'Decline'" class="section" :class="{isActive: activeStep == 3 }">
-                <label>We're sorry to hear that you will not be coming!</label>
+            </div>
+            <div v-if="formData.RSVPDecision == 'Decline'" class="section" :class="{isActive: activeStep == 3 }">
+                <form @submit.prevent="submit">
+                    <label>We're sorry to hear that you will not be coming!</label>
+                    <div>
+                        <input class="row button" type="submit" value="Submit" @submit.prevent="submit">
+                    </div>
+                </form>
+            </div>
+            <div v-if="formData.RSVPDecision == 'Montana'" class="section" :class="{isActive: activeStep == 3 }">
+                <form @submit.prevent="submit">
+                    <label>We're still working on details for a Montana reception and will send out a separate invitation later!</label>
+                    <div>
+                        <input class="row button" type="submit" value="Submit" @submit.prevent="submit">
+                    </div>
+                </form>
             </div>
         </form>
         </div>
@@ -79,25 +98,23 @@
 import { reactive } from 'vue';
 
 let formData = reactive({
-    foodChoice: '',
-    rsvpChoice: ''
+    FirstName: '',
+    LastName: '',
+    Code: '',
+    FoodChoice: '',
+    RSVPDecision: '',
 });
-let lookupData = {
-    firstName: '',
-    lastName: '',
-    code: ''
-};
 let inviteValidation = ref(false);
 let activeStep = ref(1);
 
 function inviteLookup() {
-    let response = fetch('/api/RSVPQuery', {
+    fetch('/api/RSVPQuery', {
         method: 'POST',
         headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
         },
-        body: JSON.stringify(lookupData)
+        body: JSON.stringify(formData)
     }).then((response) => response.json())
         .then((data) => {
             if(data.status200OK){
@@ -116,7 +133,22 @@ function checkAttendance(){
 }
 
 function submit(e) {
-    alert(formData);
+    console.log(formData);
+    fetch('/api/RSVPSubmit', {
+        method: 'POST',
+        headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    }).then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            console.log("Success");
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 }
 
 function advanceStep(e){
@@ -171,11 +203,8 @@ fieldset{
   margin-left: 0;
 }
 
-.container{
+.form-container{
   width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-  position: relative;
 }
 
 .row{
@@ -250,7 +279,7 @@ fieldset{
   text-align: center;
   position: absolute;
   width: 100%;
-  min-height: 300px
+  min-height: 300px;
 }
 
 .form-wrapper .section h3{

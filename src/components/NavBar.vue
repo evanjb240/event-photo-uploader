@@ -29,8 +29,13 @@ export default {
     <nav class="nav" :class="nav">
         <NuxtLink to="/" @click="nav = 'topnav'">Photo Uploader</NuxtLink>
         <NuxtLink to="/" @click="nav = 'topnav'">Home</NuxtLink>
-        <NuxtLink to="/Uploader" @click="nav = 'topnav'">Photo Upload</NuxtLink>
         <NuxtLink to="/RSVP" @click="nav = 'topnav'">RSVP</NuxtLink>
+        <NuxtLink to="/WeddingParty" @click="nav = 'topnav'">Wedding Party</NuxtLink>
+        <NuxtLink to="/Venue" @click="nav = 'topnav'">Venue</NuxtLink>
+        <NuxtLink to="/Travel" @click="nav = 'topnav'">Travel</NuxtLink>
+        <NuxtLink to="/FAQ" @click="nav = 'topnav'">FAQ</NuxtLink>
+        <NuxtLink to="/GiftRegistry" @click="nav = 'topnav'">Gift Registry</NuxtLink>
+        <NuxtLink to="/Uploader" @click="nav = 'topnav'">Photo Upload</NuxtLink>
         <a href="javascript:void(0);" class="icon">
             <menu-icon size="1.5x" @click="navBar"></menu-icon>
         </a>
@@ -48,6 +53,7 @@ body {
     min-height:50px;
     top:0;
     width:100%;
+    z-index: 99;
 }
 
 .topnav {
