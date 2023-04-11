@@ -11,6 +11,7 @@ using Events.Repositories;
 using Events.Databases;
 using Events.Services;
 using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
 
 namespace Events.RSVp
 {
@@ -38,12 +39,14 @@ namespace Events.RSVp
                 // entity.RowKey = Id;
                 // var createdEntity = await _storageService.UpsertEntityAsync(entity);
 
-                var returnedEntity = await _storageService.GetEntityAsync(entity.Code, entity.LastName);
-                if (returnedEntity == null)
+                var foundEntity = await _storageService.GetEntityAsync(entity.Code, entity.LastName);
+                if (foundEntity == null)
                 {
                     return new JsonResult(new { StatusCodes.Status404NotFound, message = "Code combination not found" });
                 }
-                return new JsonResult(new { StatusCodes.Status200OK, message = returnedEntity.LastName });
+                List<RSVPEntity> foundEntities = await _storageService.GetEntityByCodeAsync(entity.Code);
+
+                return new JsonResult(new { StatusCodes.Status200OK, foundEntities = foundEntities });
 
             }
             catch (Exception e)

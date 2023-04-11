@@ -25,69 +25,70 @@
                 </div>
             </div>
             <div class="section" :class="{isActive: activeStep == 2 }">
-                <h3>Will you attend?</h3>
-                <label>Please respond by xxxx</label>
-                <div class="row cf">
-                    <div class="four col">
-                        <input type="radio" name="rsvp_accept" id="rsvp_accept" value="Accept" v-model="formData.RSVPDecision" checked>
-                        <label for="rsvp_accept">
-                            <h4>Gladly Accept</h4>
-                        </label>
-                    </div>
-                    <div class="four col">
-                        <input type="radio" name="rsvp_decline" id="rsvp_decline" value="Decline" v-model="formData.RSVPDecision">
-                        <label for="rsvp_decline">
-                            <h4>Regretfully Decline</h4>
-                        </label>
-                    </div>
-                    <div class="four col">
-                        <input type="radio" name="rsvp_montana" id="rsvp_montana" value="Montana" v-model="formData.RSVPDecision">
-                        <label for="rsvp_montana">
-                            <h4>Montana Reception</h4>
-                        </label>
-                    </div>
-                </div>
-                <div class="row button" @click="checkAttendance">Next</div>
-            </div>
-            <div v-if="formData.RSVPDecision == 'Accept'" class="section" :class="{isActive: activeStep == 3 }">
-                <form @submit.prevent="submit">
-                    <div>
-                        <label for="fname">Please add a food choice:</label>
-                    </div>
+                <div v-for="invite of foundInvites">
+                    <h3>Will {{invite.firstName}} {{invite.lastName}} attend?</h3>
+                    <label>Please respond by xxxx</label>
                     <div class="row cf">
                         <div class="four col">
-                            <input type="radio" id="rsvp_food_1" v-model="formData.FoodChoice" name="rsvp_food_choice"
-                            value="Salmon">
-                            <label for="rsvp_food_1"><h4>Salmon</h4></label>
+                            <input type="radio" :name="`rsvp_accept${invite.rowKey}`" :id="`rsvp_accept${invite.rowKey}`" value="Accept" v-model="invite.rsvpDecision">
+                            <label :for="`rsvp_accept${invite.rowKey}`">
+                                <h4>Gladly Accept</h4>
+                            </label>
                         </div>
                         <div class="four col">
-                            <input type="radio" id="rsvp_food_2" v-model="formData.FoodChoice" name="rsvp_food_choice"
-                            value="Chicken">
-                            <label for="rsvp_food_2"><h4>Chicken</h4></label>
+                            <input type="radio" :name="`rsvp_decline${invite.rowKey}`" :id="`rsvp_decline${invite.rowKey}`" value="Decline" v-model="invite.rsvpDecision">
+                            <label :for="`rsvp_decline${invite.rowKey}`">
+                                <h4>Regretfully Decline</h4>
+                            </label>
                         </div>
                         <div class="four col">
-                            <input type="radio" id="rsvp_food_3" v-model="formData.FoodChoice" name="rsvp_food_choice"
-                            value="Vegetarian">
-                            <label for="rsvp_food_3"><h4>Vegetarian</h4></label>
+                            <input type="radio" :name="`rsvp_montana${invite.rowKey}`" :id="`rsvp_montana${invite.rowKey}`" value="Montana" v-model="invite.rsvpDecision">
+                            <label :for="`rsvp_montana${invite.rowKey}`">
+                                <h4>Montana Reception</h4>
+                            </label>
                         </div>
                     </div>
-                    <input class="row button" type="submit" value="Submit" @submit="submit">
-                </form>
+                </div>
+                <div>
+                    <div class="row button-secondary" @click="back">Back</div>
+                    <div class="row button" @click="checkAttendance">Next</div>
+                </div>
+               
             </div>
-            <div v-if="formData.RSVPDecision == 'Decline'" class="section" :class="{isActive: activeStep == 3 }">
-                <form @submit.prevent="submit">
-                    <label>We're sorry to hear that you will not be coming!</label>
-                    <div>
-                        <input class="row button" type="submit" value="Submit" @submit.prevent="submit">
+            <div class="section" :class="{isActive: activeStep == 3 }">
+                <div v-for="invite of foundInvites" >
+                    <div v-if="invite.rsvpDecision == 'Accept'">
+                        <div>
+                            <h3>Please add a food choice for <b>{{`${invite.firstName} ${invite.lastName}`}}</b>:</h3>
+                        </div>
+                        <div class="row cf">
+                            <div class="four col">
+                                <input type="radio" id="rsvp_food_1" v-model="invite.foodChoice" name="rsvp_food_choice"
+                                value="Salmon">
+                                <label for="rsvp_food_1"><h4>Salmon</h4></label>
+                            </div>
+                            <div class="four col">
+                                <input type="radio" id="rsvp_food_2" v-model="invite.foodChoice" name="rsvp_food_choice"
+                                value="Chicken">
+                                <label for="rsvp_food_2"><h4>Chicken</h4></label>
+                            </div>
+                            <div class="four col">
+                                <input type="radio" id="rsvp_food_3" v-model="invite.foodChoice" name="rsvp_food_choice"
+                                value="Vegetarian">
+                                <label for="rsvp_food_3"><h4>Vegetarian</h4></label>
+                            </div>
+                        </div>
                     </div>
-                </form>
-            </div>
-            <div v-if="formData.RSVPDecision == 'Montana'" class="section" :class="{isActive: activeStep == 3 }">
-                <form @submit.prevent="submit">
-                    <label>We're still working on details for a Montana reception and will send out a separate invitation later!</label>
-                    <div>
-                        <input class="row button" type="submit" value="Submit" @submit.prevent="submit">
+                    <div v-if="invite.rsvpDecision == 'Decline'">
+                        <label><b>{{`${invite.firstName} ${invite.lastName}`}}</b>, we're sorry to hear that you will not be coming!</label>
                     </div>
+                    <div v-if="invite.rsvpDecision == 'Montana'">
+                        <label><b>{{`${invite.firstName} ${invite.lastName}`}}</b>, we're still working on details for a Montana reception and will send out a separate invitation later!</label>
+                    </div>
+                </div>
+                <form @submit.prevent="submit">
+                    <div class="button-secondary" @click="back">Back</div>
+                    <input class="button" type="submit" value="Submit" @submit.prevent="submit" />
                 </form>
             </div>
         </form>
@@ -100,12 +101,12 @@ import { reactive } from 'vue';
 let formData = reactive({
     FirstName: '',
     LastName: '',
-    Code: '',
-    FoodChoice: '',
-    RSVPDecision: '',
+    Code: ''
 });
 let inviteValidation = ref(false);
 let activeStep = ref(1);
+let foundInvites = ref();
+
 
 function inviteLookup() {
     fetch('/api/RSVPQuery', {
@@ -117,6 +118,7 @@ function inviteLookup() {
         body: JSON.stringify(formData)
     }).then((response) => response.json())
         .then((data) => {
+            foundInvites.value = data.foundEntities;
             if(data.status200OK){
                 advanceStep();
                 inviteValidation.value = false;
@@ -133,14 +135,13 @@ function checkAttendance(){
 }
 
 function submit(e) {
-    console.log(formData);
     fetch('/api/RSVPSubmit', {
         method: 'POST',
         headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(foundInvites.value)
     }).then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -153,6 +154,9 @@ function submit(e) {
 
 function advanceStep(e){
     activeStep.value = activeStep.value + 1;
+}
+function back(e){
+    activeStep.value = activeStep.value - 1;
 }
 
 </script>
@@ -299,6 +303,19 @@ fieldset{
   display: inline-block;
   padding: 8px 30px;
   color: #fff;
+  cursor: pointer;
+  font-size: 14px !important;
+  font-family: 'Open Sans', sans-serif !important;
+  bottom: 20px;
+  margin-top:10px;
+  border-style: none;
+}
+
+.form-wrapper .button-secondary, .form-wrapper .submit{
+  color: #3498db;
+  display: inline-block;
+  padding: 8px 30px;
+  background-color: #fff;
   cursor: pointer;
   font-size: 14px !important;
   font-family: 'Open Sans', sans-serif !important;

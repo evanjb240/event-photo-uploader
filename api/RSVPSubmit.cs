@@ -11,6 +11,7 @@ using Events.Repositories;
 using Events.Databases;
 using Events.Services;
 using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
 
 namespace Events.RSVp
 {
@@ -28,26 +29,32 @@ namespace Events.RSVp
                 {
                     requestBody = await streamReader.ReadToEndAsync();
                 }
-                RSVPEntity entity = JsonConvert.DeserializeObject<RSVPEntity>(requestBody);  
+                List<RSVPEntity> entities = JsonConvert.DeserializeObject<List<RSVPEntity>>(requestBody);  
                 RSVPStorageService _storageService = new RSVPStorageService(Environment.GetEnvironmentVariable("UploadStorage"));
 
-                if(string.IsNullOrEmpty(entity.PartitionKey)){
-                    entity.PartitionKey = entity.Code;
-                }
-                if(string.IsNullOrEmpty(entity.RowKey)){
-                    string id = Guid.NewGuid().ToString();
-                    entity.Id = id;
-                    entity.RowKey = id;
+                List<RSVPEntity> upsertedEntities = new List<RSVPEntity>();
+                foreach(RSVPEntity entity in entities){
+                    if(string.IsNullOrEmpty(entity.PartitionKey)){
+                        entity.PartitionKey = entity.Code;
+                    }
+                    if(string.IsNullOrEmpty(entity.RowKey)){
+                        string id = Guid.NewGuid().ToString();
+                        entity.Id = id;
+                        entity.RowKey = id;
+                    }
+
+                    //var returnedEntity = await _storageService.GetEntityAsync(entity.Code, entity.LastName);
+                    /*if (returnedEntity == null)
+                    {
+                        return new JsonResult(new { StatusCodes.Status404NotFound, message = "Code combination not found" });
+                    }*/
+                    var createdEntity = await _storageService.UpsertEntityAsync(entity);
+                    if(createdEntity != null){
+                        upsertedEntities.Add(createdEntity);
+                    }
                 }
 
-                //var returnedEntity = await _storageService.GetEntityAsync(entity.Code, entity.LastName);
-                /*if (returnedEntity == null)
-                {
-                    return new JsonResult(new { StatusCodes.Status404NotFound, message = "Code combination not found" });
-                }*/
-                var createdEntity = await _storageService.UpsertEntityAsync(entity);
-
-                return new JsonResult(new { StatusCodes.Status200OK, message = createdEntity });
+                return new JsonResult(new { StatusCodes.Status200OK, message = upsertedEntities });
 
             }
             catch (Exception e)

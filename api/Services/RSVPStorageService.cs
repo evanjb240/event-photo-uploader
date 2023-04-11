@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Azure.Data.Tables;
@@ -26,6 +27,16 @@ namespace Events.Services
                 return null;
             }
             return await ret.FirstOrDefaultAsync();;  
+        }
+        public async Task<List<RSVPEntity>> GetEntityByCodeAsync(string code)
+        {
+            var tableClient = await GetTableClient();
+
+            var ret = tableClient.QueryAsync<RSVPEntity>(x=> x.Code == code);
+            if(ret == null){
+                return null;
+            }
+            return await ret.ToListAsync();;  
         }
 
         public async Task<RSVPEntity> UpsertEntityAsync(RSVPEntity entity)
