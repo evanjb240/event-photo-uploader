@@ -64,19 +64,19 @@
                         </div>
                         <div class="row cf">
                             <div class="four col">
-                                <input type="radio" id="rsvp_food_1" v-model="invite.foodChoice" name="rsvp_food_choice"
+                                <input type="radio" :id="`rsvp_food_1${invite.rowKey}`" v-model="invite.foodChoice" :name="`rsvp_food_choice${invite.rowKey}`"
                                 value="Salmon">
-                                <label for="rsvp_food_1"><h4>Salmon</h4></label>
+                                <label :for="`rsvp_food_1${invite.rowKey}`"><h4>Salmon</h4></label>
                             </div>
                             <div class="four col">
-                                <input type="radio" id="rsvp_food_2" v-model="invite.foodChoice" name="rsvp_food_choice"
+                                <input type="radio" :id="`rsvp_food_2${invite.rowKey}`" v-model="invite.foodChoice" :name="`rsvp_food_choice${invite.rowKey}`"
                                 value="Chicken">
-                                <label for="rsvp_food_2"><h4>Chicken</h4></label>
+                                <label :for="`rsvp_food_2${invite.rowKey}`"><h4>Chicken</h4></label>
                             </div>
                             <div class="four col">
-                                <input type="radio" id="rsvp_food_3" v-model="invite.foodChoice" name="rsvp_food_choice"
+                                <input type="radio" :id="`rsvp_food_3${invite.rowKey}`" v-model="invite.foodChoice" :name="`rsvp_food_choice${invite.rowKey}`"
                                 value="Vegetarian">
-                                <label for="rsvp_food_3"><h4>Vegetarian</h4></label>
+                                <label :for="`rsvp_food_3${invite.rowKey}`"><h4>Vegetarian</h4></label>
                             </div>
                         </div>
                     </div>
