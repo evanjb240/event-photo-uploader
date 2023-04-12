@@ -40,7 +40,7 @@ namespace Events.RSVp
                     if(string.IsNullOrEmpty(entity.RowKey)){
                         string id = Guid.NewGuid().ToString();
                         entity.Id = id;
-                        entity.RowKey = id;
+                        entity.RowKey = entity.FirstName + entity.LastName;
                     }
 
                     //var returnedEntity = await _storageService.GetEntityAsync(entity.Code, entity.LastName);

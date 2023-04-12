@@ -5,6 +5,7 @@
             <li :class="{isActive: activeStep==1}">Step 1</li>
             <li :class="{isActive: activeStep==2}">Step 2</li>
             <li :class="{isActive: activeStep==3}">Step 3</li>
+            <li :class="{isActive: activeStep==4}">Done!</li>
         </ul>
         <form class="form-wrapper">
             <div class="section" :class="{isActive: activeStep == 1}">
@@ -91,6 +92,9 @@
                     <input class="button" type="submit" value="Submit" @submit.prevent="submit" />
                 </form>
             </div>
+            <div class="section" :class="{isActive: activeStep == 4 }">
+                <h3>Thank you for your RSVP!</h3>
+            </div>
         </form>
         </div>
     </div>
@@ -144,8 +148,7 @@ function submit(e) {
         body: JSON.stringify(foundInvites.value)
     }).then((response) => response.json())
         .then((data) => {
-            console.log(data);
-            console.log("Success");
+            advanceStep();
         })
         .catch((error) => {
             console.log(error);
