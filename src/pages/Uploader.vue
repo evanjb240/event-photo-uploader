@@ -1,5 +1,5 @@
 <template>
-    <div class="uploader-page">
+    <div>
         <LazyUploader />
     </div>
 </template>

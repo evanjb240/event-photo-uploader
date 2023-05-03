@@ -13,7 +13,8 @@ namespace Events.Databases
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string RSVPDecision { get; set; }
-        public string FoodChoice { get; set; }
+        public string ArrivalDate { get; set; }
+        public string DepartureDate { get; set; }
         public int PlusOne { get; set; }
         public DateTimeOffset? Timestamp { get; set; }
         public ETag ETag { get; set; }

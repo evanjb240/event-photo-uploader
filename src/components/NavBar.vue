@@ -29,15 +29,15 @@ export default {
     <nav class="nav" :class="nav">
         <NuxtLink to="/" @click="nav = 'topnav'">Photo Uploader</NuxtLink>
         <NuxtLink to="/" @click="nav = 'topnav'">Home</NuxtLink>
+        <NuxtLink to="/Venue" @click="nav = 'topnav'">Venue</NuxtLink>
         <NuxtLink to="/RSVP" @click="nav = 'topnav'">RSVP</NuxtLink>
         <NuxtLink to="/WeddingParty" @click="nav = 'topnav'">Wedding Party</NuxtLink>
-        <NuxtLink to="/Venue" @click="nav = 'topnav'">Venue</NuxtLink>
         <NuxtLink to="/Travel" @click="nav = 'topnav'">Travel</NuxtLink>
-        <NuxtLink to="/FAQ" @click="nav = 'topnav'">FAQ</NuxtLink>
+        <NuxtLink to="/Guidelines" @click="nav = 'topnav'">Guidelines</NuxtLink>
         <NuxtLink to="/GiftRegistry" @click="nav = 'topnav'">Gift Registry</NuxtLink>
         <NuxtLink to="/Uploader" @click="nav = 'topnav'">Photo Upload</NuxtLink>
-        <a href="javascript:void(0);" class="icon">
-            <menu-icon size="1.5x" @click="navBar"></menu-icon>
+        <a href="javascript:void(0);" @click="navBar" class="icon">
+            <menu-icon size="16"></menu-icon>
         </a>
     </nav>
 </template>
@@ -66,7 +66,7 @@ body {
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 10px 12px;
     text-decoration: none;
     font-size: 17px;
 }
@@ -85,7 +85,7 @@ body {
     display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
     .topnav a:not(:first-child) {
         display: none;
     }
@@ -96,7 +96,7 @@ body {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
     .topnav.responsive {
         position: fixed;
     }
