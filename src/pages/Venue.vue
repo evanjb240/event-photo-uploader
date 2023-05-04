@@ -1,6 +1,6 @@
 <template>
     <div>
-      <HeroImage text="Dreams Royal Beach" :image="`url('../assets/dreams_royal_beach_overhead_view.webp')`" />
+      <HeroImage text="Dreams Royal Beach" :image="`url('/_nuxt/assets/dreams_royal_beach_overhead_view.webp')`" />
       <div>
         <h3>Booking</h3>
         <ul>
