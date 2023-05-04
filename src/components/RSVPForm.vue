@@ -1,101 +1,94 @@
 <template>
     <div class="form-container">
-    <div class="wrapper">
-        <ul class="steps">
-            <li :class="{isActive: activeStep==1}">Step 1</li>
-            <li :class="{isActive: activeStep==2}">Step 2</li>
-            <li :class="{isActive: activeStep==3}">Step 3</li>
-            <li :class="{isActive: activeStep==4}">Done!</li>
-        </ul>
-        <form class="form-wrapper">
-            <div class="section" :class="{isActive: activeStep == 1}">
-                <div class="row">
-                    <div>
-                        <input type="text" placeholder="First Name" v-model="formData.FirstName" />
-                    </div>
-                    <div>
-                        <input type="text" placeholder="Last Name" v-model="formData.LastName" />
-                    </div>
-                    <div>
-                        <input type="text" placeholder="Enter your code" v-model="formData.Code" />
-                    </div>
-                </div>
-                <div v-if="inviteValidation">An error has occurred. Please make sure all fields are filled in.</div>
-                <div>
-                    <div class="button" @click="inviteLookup">Lookup Invitation</div>
-                </div>
-            </div>
-            <div class="section" :class="{isActive: activeStep == 2 }">
-                <div v-for="invite of foundInvites">
-                    <h3>Will {{invite.firstName}} {{invite.lastName}} attend?</h3>
-                    <label>Please respond by xxxx</label>
-                    <div class="row cf">
-                        <div class="four col">
-                            <input type="radio" :name="`rsvp_accept${invite.rowKey}`" :id="`rsvp_accept${invite.rowKey}`" value="Accept" v-model="invite.rsvpDecision">
-                            <label :for="`rsvp_accept${invite.rowKey}`">
-                                <h4>Gladly Accept</h4>
-                            </label>
-                        </div>
-                        <div class="four col">
-                            <input type="radio" :name="`rsvp_decline${invite.rowKey}`" :id="`rsvp_decline${invite.rowKey}`" value="Decline" v-model="invite.rsvpDecision">
-                            <label :for="`rsvp_decline${invite.rowKey}`">
-                                <h4>Regretfully Decline</h4>
-                            </label>
-                        </div>
-                        <div class="four col">
-                            <input type="radio" :name="`rsvp_montana${invite.rowKey}`" :id="`rsvp_montana${invite.rowKey}`" value="Montana" v-model="invite.rsvpDecision">
-                            <label :for="`rsvp_montana${invite.rowKey}`">
-                                <h4>Montana Reception</h4>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="row button-secondary" @click="back">Back</div>
-                    <div class="row button" @click="checkAttendance">Next</div>
-                </div>
-               
-            </div>
-            <div class="section" :class="{isActive: activeStep == 3 }">
-                <div v-for="invite of foundInvites" >
-                    <div v-if="invite.rsvpDecision == 'Accept'">
+        <div class="wrapper">
+            <ul class="steps">
+                <li :class="{isActive: activeStep==1}">Step 1</li>
+                <li :class="{isActive: activeStep==2}">Step 2</li>
+                <li :class="{isActive: activeStep==3}">Step 3</li>
+                <li :class="{isActive: activeStep==4}">Done!</li>
+            </ul>
+            <form class="form-wrapper">
+                <div class="section" v-if="activeStep == 1" :class="{isActive: activeStep == 1}">
+                    <div class="row">
                         <div>
-                            <h3>Please add a food choice for <b>{{`${invite.firstName} ${invite.lastName}`}}</b>:</h3>
+                            <input type="text" placeholder="First Name" v-model="formData.FirstName" />
                         </div>
+                        <div>
+                            <input type="text" placeholder="Last Name" v-model="formData.LastName" />
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Enter your code" v-model="formData.Code" />
+                        </div>
+                    </div>
+                    <div v-if="inviteValidation">An error has occurred. Please make sure all fields are filled in.</div>
+                    <div>
+                        <div class="button" @click="inviteLookup">Lookup Invitation</div>
+                    </div>
+                </div>
+                <div class="section" v-if="activeStep == 2" :class="{isActive: activeStep == 2 }">
+                    <div v-for="invite of foundInvites">
+                        <h3>Will {{invite.firstName}} {{invite.lastName}} attend?</h3>
+                        <label>Please respond by xxxx</label>
                         <div class="row cf">
                             <div class="four col">
-                                <input type="radio" :id="`rsvp_food_1${invite.rowKey}`" v-model="invite.foodChoice" :name="`rsvp_food_choice${invite.rowKey}`"
-                                value="Salmon">
-                                <label :for="`rsvp_food_1${invite.rowKey}`"><h4>Salmon</h4></label>
+                                <input type="radio" :name="`rsvp_accept${invite.rowKey}`" :id="`rsvp_accept${invite.rowKey}`" value="Accept" v-model="invite.rsvpDecision">
+                                <label :for="`rsvp_accept${invite.rowKey}`">
+                                    <h4>Gladly Accept</h4>
+                                </label>
                             </div>
                             <div class="four col">
-                                <input type="radio" :id="`rsvp_food_2${invite.rowKey}`" v-model="invite.foodChoice" :name="`rsvp_food_choice${invite.rowKey}`"
-                                value="Chicken">
-                                <label :for="`rsvp_food_2${invite.rowKey}`"><h4>Chicken</h4></label>
+                                <input type="radio" :name="`rsvp_decline${invite.rowKey}`" :id="`rsvp_decline${invite.rowKey}`" value="Decline" v-model="invite.rsvpDecision">
+                                <label :for="`rsvp_decline${invite.rowKey}`">
+                                    <h4>Regretfully Decline</h4>
+                                </label>
                             </div>
                             <div class="four col">
-                                <input type="radio" :id="`rsvp_food_3${invite.rowKey}`" v-model="invite.foodChoice" :name="`rsvp_food_choice${invite.rowKey}`"
-                                value="Vegetarian">
-                                <label :for="`rsvp_food_3${invite.rowKey}`"><h4>Vegetarian</h4></label>
+                                <input type="radio" :name="`rsvp_montana${invite.rowKey}`" :id="`rsvp_montana${invite.rowKey}`" value="Montana" v-model="invite.rsvpDecision">
+                                <label :for="`rsvp_montana${invite.rowKey}`">
+                                    <h4>Montana Reception</h4>
+                                </label>
                             </div>
                         </div>
                     </div>
-                    <div v-if="invite.rsvpDecision == 'Decline'">
-                        <label><b>{{`${invite.firstName} ${invite.lastName}`}}</b>, we're sorry to hear that you will not be coming!</label>
+                    <div>
+                        <div class="row button-secondary" @click="back">Back</div>
+                        <div class="row button" @click="checkAttendance">Next</div>
                     </div>
-                    <div v-if="invite.rsvpDecision == 'Montana'">
-                        <label><b>{{`${invite.firstName} ${invite.lastName}`}}</b>, we're still working on details for a Montana reception and will send out a separate invitation later!</label>
-                    </div>
+                
                 </div>
-                <form @submit.prevent="submit">
-                    <div class="button-secondary" @click="back">Back</div>
-                    <input class="button" type="submit" value="Submit" @submit.prevent="submit" />
-                </form>
-            </div>
-            <div class="section" :class="{isActive: activeStep == 4 }">
-                <h3>Thank you for your RSVP!</h3>
-            </div>
-        </form>
+                <div class="section" v-if="activeStep == 3" :class="{isActive: activeStep == 3 }">
+                    <div v-for="invite of foundInvites" >
+                        <div v-if="invite.rsvpDecision == 'Accept'">
+                            <div>
+                                <h3>Please add an arrival/departure date for: <b>{{`${invite.firstName} ${invite.lastName}`}}</b>:</h3>
+                            </div>
+                            <div class="row cf">
+                                <div class="four col">
+                                    <input type="date" :id="`arrival_date${invite.rowKey}`" v-model="invite.arrivalDate" :name="`arrival_date${invite.rowKey}`">
+                                    <label :for="`arrival_date${invite.rowKey}`"><h4>Arrival Date</h4></label>
+                                </div>
+                                <div class="four col">
+                                    <input type="date" :id="`departure_date${invite.rowKey}`" v-model="invite.departureDate" :name="`departure_date${invite.rowKey}`">
+                                    <label :for="`departure_date${invite.rowKey}`"><h4>Departure Date</h4></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div v-if="invite.rsvpDecision == 'Decline'">
+                            <label><b>{{`${invite.firstName} ${invite.lastName}`}}</b>, we're sorry to hear that you will not be coming!</label>
+                        </div>
+                        <div v-if="invite.rsvpDecision == 'Montana'">
+                            <label><b>{{`${invite.firstName} ${invite.lastName}`}}</b>, we're still working on details for a Montana reception and will send out a separate invitation later!</label>
+                        </div>
+                    </div>
+                    <form @submit.prevent="submit">
+                        <div class="button-secondary" @click="back">Back</div>
+                        <input class="button" type="submit" value="Submit" @submit.prevent="submit" />
+                    </form>
+                </div>
+                <div class="section" v-if="activeStep == 4" :class="{isActive: activeStep == 4 }">
+                    <h3>Thank you for your RSVP!</h3>
+                </div>
+            </form>
         </div>
     </div>
 </template>
@@ -163,7 +156,7 @@ function back(e){
 }
 
 </script>
-<style>
+<style scoped>
 
 h1, h2, h3, h4, h5 ,h6{
   font-weight: 200;
@@ -265,7 +258,7 @@ fieldset{
 /* FORM */
 
 .form-wrapper .section{
-  padding: 0px 20px 30px 20px;
+  padding: 30px 20px 30px 20px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -284,15 +277,9 @@ fieldset{
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   text-align: center;
-  position: absolute;
   width: 100%;
   min-height: 300px;
 }
-
-.form-wrapper .section h3{
-  margin-bottom: 30px;
-}
-
 .form-wrapper .section.isActive{
   opacity: 1;
   -webkit-transform: scale(1, 1);
