@@ -1,14 +1,5 @@
 <template>
     <div>
-        <div>
-            <h1>RSVP</h1>
-            <div>
-                If you're responding for you and a guest (or your family), you'll be able to RSVP for your entire group.
-            </div>
-            <div>
-                Please use your last name and code from your invitation.
-            </div>
-        </div>
         <div class="form-container">
             <div class="wrapper">
                 <ul class="steps">

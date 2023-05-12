@@ -5,10 +5,12 @@
             <div class="container">
                 <slot></slot>
             </div>
+            <footer>
+            </footer>
         </div>
     </div>
 </template>
-<style scoped>
+<style>
 .main{
     display: flex;
     justify-content: center;
@@ -22,5 +24,32 @@
     width:90%;
     background-color: whitesmoke;
     padding:20px;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #333;
+    height: auto;
+    width: 100vw;
+    padding-top: 40px;
+    color: #fff;
+}
+.centered{
+  display:flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+h1 {
+	font-family: 'Dancing Script', cursive;
+	font-size: 80px;
+    font-weight: 900;
+	margin-bottom: 30px;
+}
+p{
+  font-family: 'Dancing Script';
+	font-size: 18px;
 }
 </style>
