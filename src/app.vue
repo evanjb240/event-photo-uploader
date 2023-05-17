@@ -14,7 +14,7 @@ html,body, #__nuxt, #__layout{
 
 @font-face {
     font-family: 'Angola Beach';
-    src: url('~/assets/fonts/Angola Beach.ttf');
+    src: url('~/assets/fonts/AngolaBeach.ttf');
 }
 @font-face {
   font-family: 'Baliva';
