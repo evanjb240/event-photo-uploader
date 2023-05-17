@@ -20,6 +20,7 @@
 }
 .container{
     margin-top:10px;
+    margin-bottom:50px;
     border-radius: 5px 5px 0px 0px;
     width:90%;
     background-color: whitesmoke;
@@ -43,9 +44,8 @@ footer{
   align-items: center;
 }
 h1 {
-	font-family: 'Dancing Script', cursive;
+	font-family: 'Baliva';
 	font-size: 80px;
-    font-weight: 900;
 	margin-bottom: 30px;
 }
 p{
