@@ -45,7 +45,7 @@ namespace Events.Repositories
                 BlobClient client = container.GetBlobClient(DateTime.Now.ToString("yyyyMMddhhmm") + Guid.NewGuid() + blob.FileName);
 
                 // Open a stream for the file we want to upload
-                await using (Stream? data = blob.OpenReadStream())
+                await using (Stream data = blob.OpenReadStream())
                 {
                     // Upload the file async
                     await client.UploadAsync(data);

@@ -29,6 +29,7 @@ const props = defineProps({
   left: 30%;
   transform: translate(-50%, -50%);
   color: white;
+  font-size: 20px;
   font-family: 'Baliva';
 }
 
