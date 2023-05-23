@@ -65,12 +65,12 @@
                                 </div>
                                 <div class="row cf">
                                     <div class="four col">
-                                        <input type="date" :id="`arrival_date${invite.rowKey}`" v-model="invite.arrivalDate" :name="`arrival_date${invite.rowKey}`">
-                                        <label :for="`arrival_date${invite.rowKey}`"><h4>Arrival Date</h4></label>
+                                        <DatePicker v-model:date="invite.arrivalDate"></DatePicker>
+                                        <label><h4>Arrival Date</h4></label>
                                     </div>
                                     <div class="four col">
-                                        <input type="date" :id="`departure_date${invite.rowKey}`" v-model="invite.departureDate" :name="`departure_date${invite.rowKey}`">
-                                        <label :for="`departure_date${invite.rowKey}`"><h4>Departure Date</h4></label>
+                                        <DatePicker v-model:date="invite.departureDate"></DatePicker>
+                                        <label><h4>Departure Date</h4></label>
                                     </div>
                                 </div>
                             </div>
