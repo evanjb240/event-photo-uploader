@@ -1,5 +1,11 @@
 <template>
-    <VueDatePicker v-model="date" @update:model-value="handleDate"></VueDatePicker>
+    <VueDatePicker :model-value="date" 
+      @update:model-value="handleDate" 
+      :format="format" 
+      model-type="MM/dd/yyyy" 
+      :enable-time-picker="false"
+      auto-apply
+      ></VueDatePicker>
   </template>
   
   <script setup>
@@ -9,7 +15,7 @@
   
   const props = defineProps({
     date: {
-        type: Date,
+        type: String,
         default: new Date()
     }
   })
@@ -20,6 +26,14 @@
   const handleDate = (modelData) => {
     date.value = modelData;
     emit('update:date', date.value);
+  }
+
+  const format = (date) => {
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+
+    return `${month}/${day}/${year}`;
   }
 
   </script>
