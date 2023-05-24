@@ -8,5 +8,6 @@
             Please use your last name and code from your invitation.
         </div>
         <RSVPForm/>
+        <WeddingLogo/>
     </div>
 </template>

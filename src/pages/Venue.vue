@@ -17,6 +17,7 @@
           <li><b>DISCOUNT CODE:</b> <span class="warning"><b>ABC123</b></span></li>
         </ul>
       </div>
+      <WeddingLogo/>
     </div>
 </template>
 <script setup>

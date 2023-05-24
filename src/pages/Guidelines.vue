@@ -32,6 +32,7 @@
                 </div>
             </div>
         </div>
+        <WeddingLogo/>
     </div>
 </template>
 <style scoped>

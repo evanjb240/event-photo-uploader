@@ -3,6 +3,7 @@
         <h1>
             Travel
         </h1>
+        <WeddingLogo :width="150" :height="150"/>
         <hr/>
         <div>
             <h3>Wedding</h3>
@@ -21,6 +22,7 @@
             <h3>Transportation</h3>
             <p>You will need to book transportation from the Airport to the resort. We recommend ____. The cost is ___. There is no need to get a rental car.</p>
         </div>  
+        <WeddingLogo/>
     </div>
 </template>
 <style scoped>

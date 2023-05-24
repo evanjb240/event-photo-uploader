@@ -15,6 +15,7 @@
         <p class="centered">
             If you prefer a gift of cash, we have set up an account with Joy to contribute to our bathroom remodel.
         </p>
+        <WeddingLogo/>
     </div>
 </template>
 <script setup>

@@ -1,6 +1,7 @@
 <template>
     <div>
         <LazyUploader />
+        <WeddingLogo/>
     </div>
 </template>
 <style scoped>

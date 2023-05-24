@@ -63,7 +63,7 @@
                                 <div>
                                     <h3>Please add an arrival/departure date for: <b>{{`${invite.firstName} ${invite.lastName}`}}</b>:</h3>
                                 </div>
-                                <div class="row cf">
+                                <div class="centered">
                                     <div class="four col">
                                         <DatePicker v-model:date="invite.arrivalDate"></DatePicker>
                                         <label><h4>Arrival Date</h4></label>
@@ -73,6 +73,7 @@
                                         <label><h4>Departure Date</h4></label>
                                     </div>
                                 </div>
+                                
                             </div>
                             <div v-if="invite.rsvpDecision == 'Decline'">
                                 <label><b>{{`${invite.firstName} ${invite.lastName}`}}</b>, we're sorry to hear that you will not be coming!</label>

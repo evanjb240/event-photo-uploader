@@ -13,7 +13,11 @@
         </div>
         <div class="party-member-list">
             <div class="party">Groomsmen</div>
+            <PartyMember class="image-item" name="Eric Bauer" position="Best Man"/>
+            <PartyMember class="image-item" name="Cade Fontana" position="Groomsman"/>
+            <PartyMember class="image-item" name="Andrew Budzizek" position="Groomsman"/>
         </div>
+        <WeddingLogo/>
     </div>
 </template>
 <script setup>
