@@ -1,12 +1,12 @@
 <template>
     <div>
         <h1 class="centered">RSVP</h1>
-        <div class="centered">
+        <p class="centered">
             If you're responding for you and a guest (or your family), you'll be able to RSVP for your entire group.
-        </div>
-        <div class="centered">
+        </p>
+        <p class="centered">
             Please use your last name and code from your invitation.
-        </div>
+        </p>
         <RSVPForm/>
         <WeddingLogo/>
     </div>

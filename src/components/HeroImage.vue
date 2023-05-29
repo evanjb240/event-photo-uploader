@@ -1,7 +1,7 @@
 <template>
     <div class="hero-image">
         <div class="hero-text">
-            <h1 style="font-size:50px">{{ text }}</h1>
+            <h1>{{ text }}</h1>
         </div>
     </div>
 </template>
@@ -25,11 +25,8 @@ const props = defineProps({
 .hero-text {
   text-align: center;
   position: absolute;
-  top: 40%;
-  left: 30%;
-  transform: translate(-50%, -50%);
   color: white;
-  font-size: 20px;
+  font-size: 40px;
   font-family: 'Baliva';
 }
 

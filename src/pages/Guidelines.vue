@@ -95,10 +95,11 @@
 
 .question{
     padding: 5px;
-    font-weight: 900;
+    font-family: 'Noto Bold';
     font-size: 18px;
 }
 .answer{
+    font-family: 'Noto Light';
     padding: 5px;
 }
 </style>

@@ -44,12 +44,15 @@ footer{
   align-items: center;
 }
 h1 {
-	font-family: 'Baliva';
+	font-family: 'Balivia';
 	font-size: 80px;
 	margin-bottom: 30px;
 }
+h2,h3 {
+	font-family: 'Noto Bold';
+}
 p{
-  font-family: 'Dancing Script';
+  font-family: 'Noto Light';
 	font-size: 18px;
 }
 </style>
