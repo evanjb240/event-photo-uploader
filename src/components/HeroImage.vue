@@ -1,15 +1,20 @@
 <template>
     <div class="hero-image">
-        <div class="hero-text">
+        <div v-if="props.text && !props.link" class="hero-text">
             <h1>{{ text }}</h1>
+        </div>
+        <div v-if="props.text && props.link" class="hero-text">
+            <NuxtLink class="hero-action" :to="props.link">{{ props.text }}</NuxtLink>
         </div>
     </div>
 </template>
 <script setup>
 
 const props = defineProps({
-    image: { type: String, required: true, default: '' },
-    text:{ type:String, required:false, default: ''}
+    image: { type: String, default: '' },
+    text:{ type:String, default: ''},
+    link: { type:String, default: ''},
+    height: { type:Number, default: 350 }
 })
 </script>
 <style scoped>
@@ -19,6 +24,7 @@ const props = defineProps({
   height:350px;
   background-blend-mode: lighten;
   display:flex;
+  align-items:center;
   flex-direction: column;
 }
 
@@ -28,20 +34,21 @@ const props = defineProps({
   color: white;
   font-size: 40px;
   font-family: 'Baliva';
+  margin-top:50px;
 }
 
-.hero-text button {
-  border: none;
-  outline: 0;
+.hero-text .hero-action {
+  border: 2px solid white;
+  background: rgba(10, 10, 10, 0.5);
+  outline: 1;
   display: inline-block;
   padding: 10px 25px;
-  color: black;
-  background-color: #ddd;
+  color: white;
   text-align: center;
   cursor: pointer;
 }
 
-.hero-text button:hover {
+.hero-text .hero-action:hover {
   background-color: #555;
   color: white;
 }
