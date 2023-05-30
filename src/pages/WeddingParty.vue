@@ -41,6 +41,11 @@
   border: 2px solid #e7e7e7;
   box-shadow: 0px 3px 6px #000000a8;
 }
+@media screen and (max-width: 480px) {
+  .image-item {
+    width: 90%;
+  }
+}
 
 .image-item img {
   width: 100%;

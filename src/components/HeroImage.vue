@@ -14,18 +14,24 @@ const props = defineProps({
     image: { type: String, default: '' },
     text:{ type:String, default: ''},
     link: { type:String, default: ''},
-    height: { type:Number, default: 350 }
+    height: { type:String, default: '350px' }
 })
 </script>
 <style scoped>
 .hero-image {
   background: v-bind("props.image") no-repeat center center; 
   background-size: cover;
-  height:350px;
   background-blend-mode: lighten;
+  min-height:350px;
   display:flex;
   align-items:center;
   flex-direction: column;
+}
+
+@media screen and (min-width: 480px) {
+  .hero-image {
+    height: v-bind("props.height");
+  }
 }
 
 .hero-text {
