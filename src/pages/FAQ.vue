@@ -19,21 +19,6 @@
                     </ul>
                 </div>
             </div>
-            <div class="column">
-                <div class="column-section">
-                    <h3>Be <b>Prepared</b>, Be <b>Cautious</b></h3> 
-                    <ul>
-                        <li>Check in and Lock up: 
-                            <ol>
-                                <li>Put passport and money into safe</li>
-                                <li>Each day, go into safe and grab your tip money you intend to use for the day</li>
-                            </ol>
-                        </li>
-                        <li>There is a lot of local vendors and mini excursions along this beach. Be prepared for some soliciting from bracelets to paragliding.
-                        </li>
-                    </ul>               
-                </div>
-            </div>
         </div>-->
         <h2>We will continue to update this page as more questions come in!</h2>
  

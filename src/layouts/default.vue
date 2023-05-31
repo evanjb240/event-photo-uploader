@@ -44,15 +44,15 @@ footer{
   align-items: center;
 }
 h1 {
-	font-family: 'Balivia';
-	font-size: 80px;
+	font-family: 'Noto EC Light';
+	font-size: 60px;
 	margin-bottom: 30px;
 }
 h2,h3,nav {
 	font-family: 'Noto Bold';
 }
-p{
-  font-family: 'Noto Light';
+p,li{
+  font-family: 'Noto R';
 	font-size: 18px;
 }
 </style>

@@ -41,6 +41,10 @@ html,body, #__nuxt, #__layout{
   src: url('~/assets/fonts/NotoSerifDisplay_ExtraCondensed-Black.ttf');
 }
 @font-face {
+  font-family: 'Noto R';
+  src: url('~/assets/fonts/NotoSerifDisplay-Regular.ttf');
+}
+@font-face {
   font-family: 'Noto Family';
   src: url('~/assets/fonts/NotoSerifDisplay_ExtraCondensed-Black.ttf');
 }

@@ -23,7 +23,7 @@
         <div>
             <h3>Passport, Immigration & Customs</h3>
             <p>A passport is required to travel to and from Punta Cana from the U.S. Passports are taking an average of 8 weeks to be completed. We recommend applying for your passport as soon as possible.</p>
-            <p>You will need to fill out immigration and custom forms to enter Punta Cana. See our <RouterLink to="/Guidelines">Tips and Tricks and FAQ page</RouterLink> for more details!</p>
+            <p>You will need to fill out immigration and custom forms to enter Punta Cana. See our <RouterLink to="/FAQ">Tips and Tricks and FAQ page</RouterLink> for more details!</p>
         </div>
         <div>
             <h3>Airport</h3>
