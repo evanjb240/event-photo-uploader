@@ -1,13 +1,24 @@
 <template>
     <div>
+        <div class="name-display centered">Evan and Karla</div>
         <div>
-            <HeroImage text="Karla and Evan" :image="`url('/images/dreams_royal_beach_overhead_view.webp')`" />
+            <div class="centered date">JANUARY 7, 2024</div>
+            <div class="centered date">PUNTA CANA, DR</div>
         </div>
+        <HeroImage style="margin-top:30px;" text="RSVP" link="/RSVP" height="600px" :image="`url('/images/Karla-Evan-Lakefront-Dip.jpg')`" />
         <WeddingLogo/>
-        <div>
-            <h1>January 7th, 2024</h1>
-            <h2>Punta Cana, Dominican Republic</h2>
-        </div>
-        <HeroImage text="RSVP" link="/RSVP" height="600px" :image="`url('/images/Karla-Evan-Lakefront-Dip.jpg')`" />
     </div>
 </template>
+<style scoped>
+.name-display{
+    font-family: 'MoonTime';
+    font-size:100px;
+}
+.date{
+    font-family: 'Noto EC Light';
+    font-size: 30px;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+</style>

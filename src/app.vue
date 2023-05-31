@@ -33,11 +33,19 @@ html,body, #__nuxt, #__layout{
   src: url('~/assets/fonts/NotoSerifDisplay-Bold.ttf');
 }
 @font-face {
+  font-family: 'Noto EC Light';
+  src: url('~/assets/fonts/NotoSerifDisplay_ExtraCondensed-Light.ttf');
+}
+@font-face {
   font-family: 'Noto EC';
   src: url('~/assets/fonts/NotoSerifDisplay_ExtraCondensed-Black.ttf');
 }
 @font-face {
   font-family: 'Noto Family';
   src: url('~/assets/fonts/NotoSerifDisplay_ExtraCondensed-Black.ttf');
+}
+@font-face {
+  font-family: 'MoonTime';
+  src: url('~/assets/fonts/MoonTime-Regular.ttf');
 }
 </style>

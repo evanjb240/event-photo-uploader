@@ -27,7 +27,7 @@ export default {
 
 <template>
     <nav class="nav" :class="nav">
-        <NuxtLink to="/" @click="nav = 'topnav'">Photo Uploader</NuxtLink>
+        <NuxtLink to="/" @click="nav = 'topnav'">Karla & Evan</NuxtLink>
         <NuxtLink to="/" @click="nav = 'topnav'">Home</NuxtLink>
         <NuxtLink to="/Venue" @click="nav = 'topnav'">Venue</NuxtLink>
         <NuxtLink to="/RSVP" @click="nav = 'topnav'">RSVP</NuxtLink>

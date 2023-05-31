@@ -48,7 +48,7 @@ h1 {
 	font-size: 80px;
 	margin-bottom: 30px;
 }
-h2,h3 {
+h2,h3,nav {
 	font-family: 'Noto Bold';
 }
 p{
