@@ -15,7 +15,7 @@
     font-size:100px;
 }
 .date{
-    font-family: 'Noto EC Light';
+    font-family: 'Barlow C Light';
     font-size: 30px;
     margin-top:5px;
     margin-bottom:5px;

@@ -9,7 +9,7 @@ const props = defineProps(['name', 'position', 'imageSrc']);
 </script>
 <style>
 .party-member-name{
-    font-family: 'Angola Beach';
+    font-family: 'MoonTime';
     font-size: 40px;
     padding-top: 10px;
     padding-bottom: 10px;

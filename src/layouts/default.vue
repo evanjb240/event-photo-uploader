@@ -49,10 +49,10 @@ h1 {
 	margin-bottom: 30px;
 }
 h2,h3,nav {
-	font-family: 'Noto Bold';
+	font-family: 'Barlow CR';
 }
-p,li{
-  font-family: 'Noto R';
-	font-size: 18px;
+p,li, div{
+    font-family: 'Barlow CR';
+    font-size: 20px;
 }
 </style>

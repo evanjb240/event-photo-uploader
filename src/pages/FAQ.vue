@@ -80,11 +80,11 @@
 
 .question{
     padding: 5px;
-    font-family: 'Noto Bold';
-    font-size: 18px;
+    font-family: 'Barlow B';
+    font-size: 26px;
 }
 .answer{
-    font-family: 'Noto Light';
+    font-family: 'Barlow CR';
     padding: 5px;
 }
 </style>

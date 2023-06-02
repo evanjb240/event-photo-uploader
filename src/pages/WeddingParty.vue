@@ -60,7 +60,7 @@
   align-items: center;
 }
 .party{
-    font-family: 'Balivia';
+    font-family: 'Barlow CR';
     font-size:40px;
     padding-top:20px;
     padding-bottom:15px;

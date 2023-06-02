@@ -13,10 +13,6 @@ html,body, #__nuxt, #__layout{
 }
 
 @font-face {
-    font-family: 'Angola Beach';
-    src: url('~/assets/fonts/AngolaBeach.ttf');
-}
-@font-face {
   font-family: 'Balivia';
   src: url('~/assets/fonts/Balivia.ttf');
 }
@@ -25,28 +21,20 @@ html,body, #__nuxt, #__layout{
   src: url('~/assets/fonts/Atteron.ttf');
 }
 @font-face {
-  font-family: 'Noto Light';
-  src: url('~/assets/fonts/NotoSerifDisplay-Light.ttf');
-}
-@font-face {
-  font-family: 'Noto Bold';
-  src: url('~/assets/fonts/NotoSerifDisplay-Bold.ttf');
+  font-family: 'Barlow B';
+  src: url('~/assets/fonts/BarlowCondensed-Medium.ttf');
 }
 @font-face {
   font-family: 'Noto EC Light';
   src: url('~/assets/fonts/NotoSerifDisplay_ExtraCondensed-Light.ttf');
 }
 @font-face {
-  font-family: 'Noto EC';
-  src: url('~/assets/fonts/NotoSerifDisplay_ExtraCondensed-Black.ttf');
+  font-family: 'Barlow C Light';
+  src: url('~/assets/fonts/BarlowCondensed-Light.ttf');
 }
 @font-face {
-  font-family: 'Noto R';
-  src: url('~/assets/fonts/NotoSerifDisplay-Regular.ttf');
-}
-@font-face {
-  font-family: 'Noto Family';
-  src: url('~/assets/fonts/NotoSerifDisplay_ExtraCondensed-Black.ttf');
+  font-family: 'Barlow CR';
+  src: url('~/assets/fonts/BarlowCondensed-Regular.ttf');
 }
 @font-face {
   font-family: 'MoonTime';

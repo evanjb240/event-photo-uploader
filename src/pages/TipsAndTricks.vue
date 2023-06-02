@@ -34,7 +34,7 @@
             <p>We recommend flying out of Chicago.  We have found round-trip, direct flights for as low $275. When we visited last minute in April, we paid around $350 each (round-trip, direct).</p>
             <p>We are also tracking costs. If you would like to receive email alerts from us, please email Karla at k.m.nettle@gmail.com</p>
         </div>
-        <div>
+        <div id="airline-notes">
             <h3>Airline Notes:</h3> 
             <ol>
                 <li> When checking into your flight (we chose American Airlines), you may need to: 
@@ -66,7 +66,7 @@
                 <li>There are a few other activities you can book with the venue for additional cost. Check out the website for more. We did a private dinner on the beach that was phenomenal!</li>
             </ul> 
         </div>
-        <div>
+        <div id="excursions">
             <h3>Excursions</h3>
             <ul>
                 <li>There are lots of excursions!
