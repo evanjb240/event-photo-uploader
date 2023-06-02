@@ -34,6 +34,7 @@ export default {
         <NuxtLink to="/RSVP" @click="nav = 'topnav'">RSVP</NuxtLink>
         <NuxtLink to="/WeddingParty" @click="nav = 'topnav'">Wedding Party</NuxtLink>
         <NuxtLink to="/FAQ" @click="nav = 'topnav'">FAQs</NuxtLink>
+        <NuxtLink to="/TipsAndTricks" @click="nav = 'topnav'">Tips and Tricks</NuxtLink>
         <NuxtLink to="/GiftRegistry" @click="nav = 'topnav'">Gift Registry</NuxtLink>
         <NuxtLink to="/Uploader" @click="nav = 'topnav'">Photo Upload</NuxtLink>
         <a href="javascript:void(0);" @click="navBar" class="icon">

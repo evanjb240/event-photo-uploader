@@ -7,8 +7,8 @@
         <div>
             <ul>
                 <li>Airport: Punta Cana International Airport, Dominican Republic (PUJ)</li>
-                <li>Resort: <a href="https://www.amrcollection.com/en/resorts-hotels/dreams/dominican-republic/royal-beach-punta-cana/" target="_blank">Dreams Royal Beach, Punta Cana</a></li>
-                <li><a href="https://eticket.migracion.gob.do/" target="_blank">Dominican Travel Authorization Form</a>: They used to give out paper copies to fill out on the plane. They do not do that anymore. You will have to go <a href="https://eticket.migracion.gob.do/">here</a> to fill out the form. Print and/or email the QR code for you (and family).</li>
+                <li>Resort: Dreams Royal Beach, Punta Cana</li>
+                <li>: They used to give out paper copies to fill out on the plane. They do not do that anymore. You will have to go <a href="https://eticket.migracion.gob.do/">here</a> to fill out the form. Print and/or email the QR code for you (and family).</li>
                 <li>Airport Transportation: 
                     <ul>
                         <li>You will probably need AT LEAST an hour to go through customs. Please book your ride for roughly 1 hour (no checked bags) or 1.5 hours (checked bags) after your flight lands.</li>
@@ -16,13 +16,27 @@
                         <li>Stepping out of the terminal into the taxi area is kind of small and can be crazy. Keep in mind the name of your transportation service and look for your name board. There will be plenty of taxi drivers waving you down. You won't need them, just keep your eyes out for your name board</li>
                         <li>Transportation Services:
                             <ul>
-                                <li><a href="https://www.jayride.com/" target="_blank">Jayride</a>: a hosting platform for taxis and shuttles that finds the most suitable ride based on time and place.</li>
-                                <li><a href="https://dominicanairporttransfers.com/" target="_blank">DAT</a>: Great company/service, be prompt for this service as they only have a 10 min grace period to wait.</li>
+                                <li>Jayride: a hosting platform for taxis and shuttles that finds the most suitable ride based on time and place.</li>
+                                <li>DAT: Great company/service, be prompt for this service as they only have a 10 min grace period to wait.</li>
                             </ul>
                         </li>
                     </ul>
                 </li>
             </ul>
+            <div>
+                <div class="primary-text centered">
+                    <a class="primary-button" href="https://www.amrcollection.com/en/resorts-hotels/dreams/dominican-republic/royal-beach-punta-cana/" target="_blank">View Hotel</a>
+                </div>
+                <div class="primary-text centered">
+                    <a class="primary-button" href="https://eticket.migracion.gob.do/" target="_blank">Dominican Travel Authorization Form</a>
+                </div>
+                <div class="primary-text centered">
+                    <a class="primary-button" href="https://www.jayride.com/" target="_blank">Jayride</a>
+                </div>
+                <div class="primary-text centered">
+                    <a class="primary-button" href="https://dominicanairporttransfers.com/" target="_blank">DAT</a>
+                </div>
+            </div>
         </div>
         <div>
             <h3>Departure Airport (Montana)</h3>

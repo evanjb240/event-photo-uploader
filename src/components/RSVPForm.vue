@@ -12,9 +12,6 @@
                     <div class="section" v-if="activeStep == 1" :class="{isActive: activeStep == 1}">
                         <div class="row">
                             <div>
-                                <input type="text" placeholder="First Name" v-model="formData.FirstName" />
-                            </div>
-                            <div>
                                 <input type="text" placeholder="Last Name" v-model="formData.LastName" />
                             </div>
                             <div>
@@ -64,11 +61,11 @@
                                     <h3>Please add an arrival/departure date for: <b>{{`${invite.firstName} ${invite.lastName}`}}</b>:</h3>
                                 </div>
                                 <div class="centered">
-                                    <div class="four col">
+                                    <div class="col">
                                         <DatePicker v-model:date="invite.arrivalDate"></DatePicker>
                                         <label><h4>Arrival Date</h4></label>
                                     </div>
-                                    <div class="four col">
+                                    <div class="col">
                                         <DatePicker v-model:date="invite.departureDate"></DatePicker>
                                         <label><h4>Departure Date</h4></label>
                                     </div>

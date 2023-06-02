@@ -55,4 +55,18 @@ p,li, div{
     font-family: 'Barlow CR';
     font-size: 20px;
 }
+.primary-text .primary-button {
+  border: 2px solid white;
+  background: rgba(32, 100, 66, 0.4);
+  outline: 1;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+}
+.primary-text .primary-button:hover {
+  background-color: #555;
+  color: white;
+}
 </style>
