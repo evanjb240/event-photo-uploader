@@ -8,7 +8,7 @@
             Please use your last name and code from your invitation.
         </p>
         <p class="centered">
-            Please RSVP by October 1, 2023.
+            Please RSVP by October 31, 2023.
         </p>
         <RSVPForm/>
         <WeddingLogo/>

@@ -58,12 +58,6 @@
     display:flex;
     flex-direction: column;
 }
-.button-container{
-    display:flex;
-    justify-content: center;
-    gap: 15px;
-    flex-direction: row;
-}
 .bottom-spacing{
     padding-bottom:50px;
 }

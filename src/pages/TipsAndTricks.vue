@@ -8,7 +8,7 @@
             <ul>
                 <li>Airport: Punta Cana International Airport, Dominican Republic (PUJ)</li>
                 <li>Resort: Dreams Royal Beach, Punta Cana</li>
-                <li>: They used to give out paper copies to fill out on the plane. They do not do that anymore. You will have to go <a href="https://eticket.migracion.gob.do/">here</a> to fill out the form. Print and/or email the QR code for you (and family).</li>
+                <li>Dominican Travel Authorization Form: They used to give out paper copies to fill out on the plane. They do not do that anymore. Link below to fill out the form. Print, email, and/or screenshot the QR code(s) to yourself for you (and family).</li>
                 <li>Airport Transportation: 
                     <ul>
                         <li>You will probably need AT LEAST an hour to go through customs. Please book your ride for roughly 1 hour (no checked bags) or 1.5 hours (checked bags) after your flight lands.</li>
@@ -54,14 +54,17 @@
                 <li> When checking into your flight (we chose American Airlines), you may need to: 
                     <ul>
                         <li>Download American Airlines app</li>
-                        <li>Download <b><a href="https://myverifly.com/#/" target="_blank">Verifly</a></b>, (a precheck of a sort). Verifly will hook into American Airline's app to allow for your 24 hour check-in. Here you will need to take a selfie per person along with scanning each person's passport. </li>
+                        <li>Download Verifly, (a precheck of a sort). Verifly will hook into American Airline's app to allow for your 24 hour check-in. Here you will need to take a selfie per person along with scanning each person's passport. </li>
                         <li>Verifly may also ask you for if you have a Travel Authorization form. This is a generic term they use. The only form you need is the </li>
                     </ul>
                 </li>
                 <li>
                     As of April 2022, the Dominican Republic has not required COVID vaccination proof, but states they can/may perform temperature checks. It may help to take pictures of your vaccination card should any questions come up.
                 </li>
-            </ol>               
+            </ol> 
+            <div class="primary-text centered">
+                <a class="primary-button" href="https://myverifly.com/#/" target="_blank">Verifly</a>
+            </div>              
         </div>
         <div>
             <h3>Venue</h3>
@@ -85,11 +88,19 @@
             <ul>
                 <li>There are lots of excursions!
                     <ul>
-                        <li>The resort has a partnership with AmstarDMC that has a lot of excursions that can be booked here: <a href="www.AmstarDMC.com.">AmstartDMC.com</a></li>
-                        <li>You can also look at these vendors to book excursions:</li>
+                        <li>The resort has a partnership with AmstarDMC that has a lot of excursions that can be booked. You can either book ahead of time, or they have a full service concierge in the lobby upon arrival.</li>
+                        <li>You can also look at Viator, as that has been a highly recommended service as well.</li>
                     </ul>
                 </li>
-            </ul> 
+            </ul>
+            <div class="button-container">
+                <div class="primary-text centered">
+                    <a class="primary-button" href="https://www.AmstarDMC.com." target="_blank">AmstarDMC.com</a>
+                </div>
+                <div class="primary-text centered">
+                    <a class="primary-button" href="https://www.viator.com" target="_blank">Viator</a>
+                </div>
+            </div> 
         </div>
     </div>
 </template>

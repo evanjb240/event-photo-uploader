@@ -1,6 +1,6 @@
 <template>
     <div class="centered">
-        <img src="@/images/PalmSpacer2.png" :width="props.width" :height="props.height" />
+        <img src="@/public/images/PalmSpacer2.png" :width="props.width" :height="props.height" />
     </div>
 </template>
 <script setup>
