@@ -31,7 +31,10 @@ namespace Events.RSVp
                 }
                 RSVPEntity entity = JsonConvert.DeserializeObject<RSVPEntity>(requestBody);  
                 RSVPStorageService _storageService = new RSVPStorageService(Environment.GetEnvironmentVariable("UploadStorage"));
-                 
+                
+                if(entity != null){
+                    entity.Code = entity.Code.ToUpper();
+                }
 
                 // entity.PartitionKey = entity.Code;
                 // string Id = Guid.NewGuid().ToString();
