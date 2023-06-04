@@ -58,7 +58,7 @@
             </ul>
         </div>
         <div class="question">What is the primary language in Punta Cana?</div>
-        <div class="answer">The primary language is spanish. However, almost everyone at the resort speaks english. </div>
+        <div class="answer">The primary language is Spanish. However, almost everyone at the resort speaks English. </div>
         <WeddingLogo/>
     </div>
 </template>

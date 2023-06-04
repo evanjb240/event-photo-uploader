@@ -13,6 +13,10 @@
                 <NuxtLink class="primary-button" to="/Venue">Venue</NuxtLink>
             </div>
         </div>
+        <div>
+            <h3>Wedding Attire</h3>
+            <p>Dressy-casual: We are still figuring out our wedding colors. More details to come!</p>
+        </div>
         <PalmSpacer :width="100" :height="60"/>
         <div class="bottom-spacing">
             <h3 class="centered">RSVP Deadline</h3>
