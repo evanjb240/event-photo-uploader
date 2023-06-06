@@ -16,6 +16,7 @@
                         <li>Stepping out of the terminal into the taxi area is kind of small and can be crazy. Keep in mind the name of your transportation service and look for your name board. There will be plenty of taxi drivers waving you down. You won't need them, just keep your eyes out for your name board</li>
                         <li>Transportation Services:
                             <ul>
+                                <li>AmstarDMC: This is the resorts recommended transportation service.</li>
                                 <li>Jayride: a hosting platform for taxis and shuttles that finds the most suitable ride based on time and place.</li>
                                 <li>DAT: Great company/service, be prompt for this service as they only have a 10 min grace period to wait.</li>
                             </ul>
@@ -31,6 +32,9 @@
                     <a class="primary-button" href="https://eticket.migracion.gob.do/" target="_blank">Dominican Travel Authorization Form</a>
                 </div>
                 <div class="primary-text centered">
+                    <a class="primary-button" href="https://www.AmstarDMC.com" target="_blank">AmstarDMC.com</a>
+                </div>
+                <div class="primary-text centered">
                     <a class="primary-button" href="https://www.jayride.com/" target="_blank">Jayride</a>
                 </div>
                 <div class="primary-text centered">
@@ -40,12 +44,12 @@
         </div>
         <div>
             <h3>Departure Airport (Montana)</h3>
-            <p>We recommend flying out of Bozeman, MT (BZN). Typically, flights are cheapest 6-8 weeks before departure, but we recommend tracking flight costs. We have found tickets for around $475.</p>
+            <p>We recommend flying out of Bozeman, MT (BZN). Typically, flights are cheapest 6-8 weeks before departure, but we recommend tracking flight costs. We have found tickets for around $475 (round-trip, non-direct).</p>
             <p>We are also tracking costs. If you would like to receive email alerts from us, please email Karla at k.m.nettle@gmail.com</p>
         </div>
         <div>
             <h3>Departure Airport (Wisconsin/Illinois/Minnesota)</h3>
-            <p>We recommend flying out of Chicago.  We have found round-trip, direct flights for as low $275. When we visited last minute in April, we paid around $350 each (round-trip, direct).</p>
+            <p>We recommend flying out of Chicago.  We have found round-trip, direct flights for as low $300 (round-trip, direct).</p>
             <p>We are also tracking costs. If you would like to receive email alerts from us, please email Karla at k.m.nettle@gmail.com</p>
         </div>
         <div id="airline-notes">
@@ -72,11 +76,11 @@
                 <li>Do not drink the water! Even to brush your teeth. You can get bottled water everywhere, and the restaurants provide filtered water. </li>
                 <li>The DR is a developing country. Please keep this in mind when you are off the resort.</li>
                 <li>The beach is public. This means that you will be approached by locals trying to sell services or goods. If you leave the resort, you should be prepared to be approached and be cautious.</li>
-                <li>The Food:
+                <li>The food:
                     <ul>
                         <li>There are many food options.</li>
                         <li>Try to eat around normal times, otherwise the food may be out or old</li>
-                        <li>Be conscious of the fact that you are eating different food. It may take a day or two to adjust </li>
+                        <li>Be conscious of the fact that you are eating different food. It may take a day or two to adjust.</li>
                     </ul>
                 </li>
                 <li>Book your spa treatments as soon as you book your room. They fill up fast!</li>
@@ -95,7 +99,7 @@
             </ul>
             <div class="button-container">
                 <div class="primary-text centered">
-                    <a class="primary-button" href="https://www.AmstarDMC.com." target="_blank">AmstarDMC.com</a>
+                    <a class="primary-button" href="https://www.AmstarDMC.com" target="_blank">AmstarDMC.com</a>
                 </div>
                 <div class="primary-text centered">
                     <a class="primary-button" href="https://www.viator.com" target="_blank">Viator</a>
