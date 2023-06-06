@@ -6,7 +6,7 @@
         <PalmSpacer :width="100" :height="60"/>
         <div class="bottom-spacing">
             <h3 class="centered">Suggested Travel Dates</h3>
-            <p class="centered">Our wedding will be on Sunday, January 7, 2024. However, everyone is invited to the rehearsal dinner on Saturday, January 6, 2024.  We recommend flying in on January 5th, but no later than January 6th so you do not miss out on any of the festivities!</p> 
+            <p class="centered">Our wedding will be on Sunday, January 7, 2024. However, everyone is invited to the rehearsal dinner on Saturday, January 6, 2024.  We recommend flying in on January 5th, but no later than January 6th so we can include you in the festivities!</p> 
             <p class="centered">We hope you will treat this as a vacation and spend some time with us at the resort. We recommend staying January 5, 2024 to January 8, 2024.</p>
             <p class="centered">Our venue is Dreams Royal Beach, an all inclusive resort, in the Dominican Republic. Visit our Venue page to find out more and book your stay!</p>
             <div class="primary-text centered">

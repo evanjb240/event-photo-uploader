@@ -21,6 +21,7 @@
             </div>
         </div>-->
         <h2>We will continue to update this page as more questions come in!</h2>
+        <a href = "mailto:ebauer1993@gmail.com,k.m.nettle@gmail.com?subject=I have a question!">Send Email</a>
         <PalmSpacer :width="100" :height="60"/>
         <div class="question">When should I book my hotel/resort stay?</div>
         <div class="answer">We recommend booking your room as soon as possible. The resort will fill up quickly and there is nothing we can do if the resort sells out.</div>
