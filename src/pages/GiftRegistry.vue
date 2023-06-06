@@ -5,7 +5,7 @@
         </h1>
         <div class="centered">
             <p>
-              <b>Your presence and time with us in Punta Cana is truly enough.</b> However, if you still wish to send a gift, we are registered at Target, Amazon, and Crate & Barrel. Please click the store below.  
+              <b>Your presence and time with us in Punta Cana is truly enough.</b> However, if you still wish to send a gift, we are registered at Target, Amazon, and Crate & Barrel. Please click the store below to be directed to the registry.  
             </p>
         </div>
         <div class="card-list">

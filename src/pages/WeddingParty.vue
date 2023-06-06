@@ -7,7 +7,7 @@
             <div class="party">Bridesmaids</div>
             <PartyMember class="image-item" name="Emily Bukowski" position="Maid of Honor" imageSrc="/images/WeddingParty/Emily_MaidOfHonor.png"/>
             <PartyMember class="image-item" name="Christina Hoover" position="Bridesmaid" imageSrc="/images/WeddingParty/Christina_Bridesmaid.png"/>
-            <PartyMember class="image-item" name="Holly Stanger" position="Bridesmaid" imageSrc="/images/WeddingParty/Holly_Bridesmaid.png"/>
+            <PartyMember class="image-item" name="Holly O'Shaughnessy" position="Bridesmaid" imageSrc="/images/WeddingParty/Holly_Bridesmaid.png"/>
             <PartyMember class="image-item" name="Delaney Wickum" position="Honorary Bridesmaid" imageSrc="/images/WeddingParty/Delaney_2.png"/>
             <PartyMember class="image-item" name="Maura Rich" position="Honorary Bridesmaid" imageSrc="/images/WeddingParty/Maura.png"/>
         </div>
