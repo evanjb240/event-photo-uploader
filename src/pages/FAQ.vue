@@ -3,25 +3,10 @@
         <h1 class="centered">
             FAQ's
         </h1>
-        <!--<div class="column-container">
-            <div class="column">
-                <div class="column-section">
-                    <h3>What to Bring</h3>
-                    <ul>
-                        <li>Light Jacket/Sweatshirt: Evenings can become cool and/or windy</li>
-                        <li>Tip money (USD), plan for roughly: 
-                            <ul>
-                                <li>$5/meal</li>
-                                <li>$1-2 every/every other drink</li>
-                                <li>$2-5 every above and beyond service</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>-->
         <h2>We will continue to update this page as more questions come in!</h2>
-        <a href = "mailto:ebauer1993@gmail.com,k.m.nettle@gmail.com?subject=I have a question!">Send Email</a>
+        <div class="primary-text centered">
+            <a class="primary-button" href="mailto:ebauer1993@gmail.com,k.m.nettle@gmail.com?subject=I have a question!">Send us a question!</a>
+        </div>
         <PalmSpacer :width="100" :height="60"/>
         <div class="question">When should I book my hotel/resort stay?</div>
         <div class="answer">We recommend booking your room as soon as possible. The resort will fill up quickly and there is nothing we can do if the resort sells out.</div>
