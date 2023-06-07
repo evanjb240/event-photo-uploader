@@ -3,8 +3,8 @@
         <h1 class="centered">
             FAQ's
         </h1>
-        <h2>We will continue to update this page as more questions come in!</h2>
-        <div class="primary-text centered">
+        <h2 class="centered">We will continue to update this page as more questions come in!</h2>
+        <div class="primary-text centered bottom-spacing">
             <a class="primary-button" href="mailto:ebauer1993@gmail.com,k.m.nettle@gmail.com?subject=I have a question!">Send us a question!</a>
         </div>
         <PalmSpacer :width="100" :height="60"/>
@@ -73,5 +73,9 @@
 .answer{
     font-family: 'Barlow CR';
     padding: 5px;
+}
+
+.bottom-spacing{
+    padding-bottom:50px;
 }
 </style>

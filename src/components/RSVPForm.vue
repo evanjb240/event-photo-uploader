@@ -31,19 +31,19 @@
                                 <div class="four col">
                                     <input type="radio" :name="`rsvp_accept${invite.rowKey}`" :id="`rsvp_accept${invite.rowKey}`" value="Accept" v-model="invite.rsvpDecision">
                                     <label :for="`rsvp_accept${invite.rowKey}`">
-                                        <h4>Gladly Accept</h4>
+                                        <h4 class="centered">Gladly Accept</h4>
                                     </label>
                                 </div>
                                 <div class="four col">
                                     <input type="radio" :name="`rsvp_decline${invite.rowKey}`" :id="`rsvp_decline${invite.rowKey}`" value="Decline" v-model="invite.rsvpDecision">
                                     <label :for="`rsvp_decline${invite.rowKey}`">
-                                        <h4>Regretfully Decline</h4>
+                                        <h4 class="centered">Regretfully Decline</h4>
                                     </label>
                                 </div>
                                 <div class="four col">
                                     <input type="radio" :name="`rsvp_montana${invite.rowKey}`" :id="`rsvp_montana${invite.rowKey}`" value="Montana" v-model="invite.rsvpDecision">
                                     <label :for="`rsvp_montana${invite.rowKey}`">
-                                        <h4>Montana Reception</h4>
+                                        <h4 class="centered">Montana Reception</h4>
                                     </label>
                                 </div>
                             </div>
@@ -70,7 +70,9 @@
                                         <label><h4>Departure Date</h4></label>
                                     </div>
                                 </div>
-                                
+                                <div>
+                                    <input type="text" placeholder="Dietary Restrictions" v-model="invite.dietaryRestrictions" />
+                                </div>
                             </div>
                             <div v-if="invite.rsvpDecision == 'Decline'">
                                 <label><b>{{`${invite.firstName} ${invite.lastName}`}}</b>, we're sorry to hear that you will not be coming!</label>

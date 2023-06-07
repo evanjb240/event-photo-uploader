@@ -15,6 +15,7 @@ namespace Events.Databases
         public string RSVPDecision { get; set; }
         public string ArrivalDate { get; set; }
         public string DepartureDate { get; set; }
+        public string DietaryRestrictions { get; set; }
         public int PlusOne { get; set; }
         public DateTimeOffset? Timestamp { get; set; }
         public ETag ETag { get; set; }
