@@ -13,9 +13,9 @@
         </div>
         <div class="party-member-list">
             <div class="party">Groomsmen</div>
-            <PartyMember class="image-item" name="Eric Bauer" position="Best Man"/>
-            <PartyMember class="image-item" name="Cade Fontana" position="Groomsman"/>
-            <PartyMember class="image-item" name="Andrew Budzizek" position="Groomsman"/>
+            <PartyMember class="image-item" name="Eric Bauer" position="Best Man" imageSrc="/images/WeddingParty/Eric.jpg"/>
+            <PartyMember class="image-item" name="Andrew Budzizek" position="Groomsman" imageSrc="/images/WeddingParty/Andrew.jpg"/>
+            <PartyMember class="image-item" name="Cade Fontana" position="Groomsman" imageSrc="/images/WeddingParty/Cade.jpg"/>
         </div>
         <WeddingLogo/>
     </div>
