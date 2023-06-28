@@ -26,7 +26,6 @@
                     <div class="section" v-if="activeStep == 2" :class="{isActive: activeStep == 2 }">
                         <div v-for="invite of foundInvites">
                             <h3>Will {{invite.firstName}} {{invite.lastName}} attend?</h3>
-                            <label>Please respond by xxxx</label>
                             <div class="row cf">
                                 <div class="four col">
                                     <input type="radio" :name="`rsvp_accept${invite.rowKey}`" :id="`rsvp_accept${invite.rowKey}`" value="Accept" v-model="invite.rsvpDecision">

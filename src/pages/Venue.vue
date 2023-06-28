@@ -2,10 +2,10 @@
     <div>
       <HeroImage text="Dreams Royal Beach" :image="`url('/images/dreams_royal_beach_overhead_view.webp')`" />
       <div>
-        <p>
+        <p class="centered">
           We have selected Dreams Royal Beach by Hyatt in Punta Cana! Dreams Royal Beach is an all-inclusive resort located on the palm-studded white-sands of Bavaro Beach. It is an intimate, family-friendly resort that includes tons of amenities.
         </p>
-        <p>
+        <p class="centered">
           Check out the room types and amenities here
         </p>
         <div class="primary-text centered">
