@@ -51,15 +51,61 @@
             </ol>
           </li>
         </ul>
+        <button class="accordion" @click="toggleBookingVideo()">View Booking Instructional Video
+          <plus-icon size="20" v-show="!showBookingVideo"></plus-icon>
+          <minus-icon size="20" v-show="showBookingVideo"></minus-icon>
+        </button>
+        <div class="centered" v-show="showBookingVideo">
+          <video width="75%" controls>
+            <source src="https://casualstorage.blob.core.windows.net/assets/BookingVideo.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
       <WeddingLogo/>
     </div>
 </template>
 <script setup>
 import HeroImage from '@/components/HeroImage.vue';
+import { PlusIcon } from '@zhuowenli/vue-feather-icons'
+import { MinusIcon } from '@zhuowenli/vue-feather-icons'
+
+const showBookingVideo = ref(false);
+
+function toggleBookingVideo(){
+  showBookingVideo.value = !showBookingVideo.value;
+}
 </script>
 <style scoped>
 .warning{
   color:red
+}
+.accordion {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(210, 210, 210);
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  transition: 0.4s;
+  font-weight: 600;
+  font-family: 'Barlow CR';
+  border-radius: 5px;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
 }
 </style>
