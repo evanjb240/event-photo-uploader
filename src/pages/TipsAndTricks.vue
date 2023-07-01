@@ -52,24 +52,6 @@
             <p>We recommend flying out of Chicago.  We have found round-trip, direct flights for as low $300 (round-trip, direct).</p>
             <p>We are also tracking costs. If you would like to receive email alerts from us, please email Karla at k.m.nettle@gmail.com</p>
         </div>
-        <div id="airline-notes">
-            <h3>Airline Notes:</h3> 
-            <ol>
-                <li> When checking into your flight (we chose American Airlines), you may need to: 
-                    <ul>
-                        <li>Download American Airlines app</li>
-                        <li>Download Verifly, (a precheck of a sort). Verifly will hook into American Airline's app to allow for your 24 hour check-in. Here you will need to take a selfie per person along with scanning each person's passport. </li>
-                        <li>Verifly may also ask you for if you have a Travel Authorization form. This is a generic term they use. The only form you need is the </li>
-                    </ul>
-                </li>
-                <li>
-                    As of April 2022, the Dominican Republic has not required COVID vaccination proof, but states they can/may perform temperature checks. It may help to take pictures of your vaccination card should any questions come up.
-                </li>
-            </ol> 
-            <div class="primary-text centered">
-                <a class="primary-button" href="https://myverifly.com/#/" target="_blank">Verifly</a>
-            </div>              
-        </div>
         <div>
             <h3>Venue</h3>
             <ul>
