@@ -28,6 +28,21 @@ namespace Events.Services
             }
             return await ret.FirstOrDefaultAsync();;  
         }
+         public async Task<List<RSVPEntity>> GetAllEntitiesAsync()
+        {
+            var tableClient = await GetTableClient();
+
+            var ret = tableClient.QueryAsync<RSVPEntity>(x=> x.RSVPDecision != "");
+            if(ret == null){
+                return null;
+            }
+            
+            var rsvpList = await ret.ToListAsync();
+
+            rsvpList = rsvpList.OrderBy(x=> x.RSVPDecision).ToList();
+
+            return rsvpList;  
+        }
         public async Task<List<RSVPEntity>> GetEntityByCodeAsync(string code)
         {
             var tableClient = await GetTableClient();
