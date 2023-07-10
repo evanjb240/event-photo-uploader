@@ -4,17 +4,18 @@
         <h1 class="centered">RSVP Results</h1>
         <table>
             <tr>
+                <th></th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>RSVP</th>
             </tr>
-            <tr v-for="rsvp of rsvpResults">
+            <tr v-for="(rsvp, index) of rsvpResults">
+                <td>{{ index + 1 }}</td>
                 <td>{{rsvp.firstName}}</td>
                 <td>{{rsvp.lastName}}</td>
                 <td>{{rsvp.rsvpDecision}}</td>
             </tr>
         </table>
-        <WeddingLogo/>
     </div>
 </template>
 <script setup>
