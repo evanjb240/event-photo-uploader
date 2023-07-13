@@ -5,7 +5,7 @@
         <p class="centered">We have selected Dreams Royal Beach by Hyatt in Punta Cana! Dreams Royal Beach is an all-inclusive resort located on the palm-studded white-sands of Bavaro Beach. It is an intimate, family-friendly resort that includes tons of amenities.</p>
         <h3>Booking</h3>
         <p>We have secured a group booking code that provides a discounted room rate. In order to secure your room, you must book using this code and pay a 1-night deposit. The remainder is due 14 days prior to your stay (charged to same card you booked with).  Cancellation and change fees apply.</p>
-        <p>We would recommend staying at least from January 5th to January 8th, but feel free to stay longer! We have a discount code available for 1/3-1/9. If you want to stay outside of those dates, you will be best off calling the resort directly to book your stay.</p>
+        <p>We would recommend staying at least from January 5th to January 8th, but feel free to stay longer! We have a discount code available for the nights of 1/3-1/9 (input on Dreams website for max stay is 1/3/24 arrival and 1/10/24 departure). If you want to stay outside of those dates, you will be best off calling the resort directly to book your stay.</p>
         <div class="primary-text centered">
             <a class="primary-button" href="https://www.amrcollection.com/en/resorts-hotels/dreams/dominican-republic/royal-beach-punta-cana/" target="_blank">Dreams Royal Beach</a>
         </div>
