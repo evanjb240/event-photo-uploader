@@ -42,7 +42,7 @@
               <a class="primary-button" href="https://www.amrcollection.com/en/resorts-hotels/dreams/dominican-republic/royal-beach-punta-cana/" target="_blank">Dreams Royal Beach</a>
             </div>
             <ol>
-              <li>Select the amount of guests who will occupy the room and select your travel dates between January 3 & 9, 2024</li>
+              <li>Select the amount of guests who will occupy the room and select your travel dates between January 3 & 10, 2024</li>
               <li>Select "Resort Only". DO NOT book your flight through the resort (it's a messy process). Click the “Check Availability” button.</li>
               <li>You will be redirected to the reservation site, click on “Enter Discount Code” and type the group code all caps-no spaces as the website is caption sensitive</li>
               <li>Click on “Save” to see the rooms with the discounted rates</li>
