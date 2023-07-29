@@ -18,6 +18,9 @@
           <div class="centered">
             <a class="card" style="min-width:175px" href="https://www.crateandbarrel.com/gift-registry/karla-nettleton-and-evan-bauer/r6731405" target="_blank"><img src="@/public/images/Crate-Barrel-Logo.png" width="150" height="80"></a>
           </div>
+          <div class="centered">
+            <a class="card" style="min-width:175px" href="https://www.menards.com/main/registrydetail.html?registryId=179207979&lastName=Bauer" target="_blank"><img src="@/public/images/Menards-logo.png" width="150" height="80"></a>
+          </div>
         </div>
         <p class="centered">
             For those who wish to give an electronic cash gift, we've set up a Cash App destination below!
