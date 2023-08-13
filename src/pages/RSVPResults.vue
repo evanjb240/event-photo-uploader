@@ -7,12 +7,14 @@
                 <th></th>
                 <th>First Name</th>
                 <th>Last Name</th>
+                <th>Travel Dates</th>
                 <th>RSVP</th>
             </tr>
             <tr v-for="(rsvp, index) of rsvpResultsAccept">
                 <td>{{ index + 1 }}</td>
                 <td>{{rsvp.firstName}}</td>
                 <td>{{rsvp.lastName}}</td>
+                <td>{{rsvp.arrivalDate + ' - ' + rsvp.departureDate}}</td>
                 <td>{{rsvp.rsvpDecision}}</td>
             </tr>
         </table>
