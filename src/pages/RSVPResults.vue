@@ -1,7 +1,7 @@
 
 <template>
     <div>
-        <h1 class="centered">RSVP Results</h1>
+        <h1 class="centered">RSVP Results - Accept</h1>
         <table>
             <tr>
                 <th></th>
@@ -9,7 +9,37 @@
                 <th>Last Name</th>
                 <th>RSVP</th>
             </tr>
-            <tr v-for="(rsvp, index) of rsvpResults">
+            <tr v-for="(rsvp, index) of rsvpResultsAccept">
+                <td>{{ index + 1 }}</td>
+                <td>{{rsvp.firstName}}</td>
+                <td>{{rsvp.lastName}}</td>
+                <td>{{rsvp.rsvpDecision}}</td>
+            </tr>
+        </table>
+        <h1 class="centered">RSVP Results - Decline</h1>
+        <table>
+            <tr>
+                <th></th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>RSVP</th>
+            </tr>
+            <tr v-for="(rsvp, index) of rsvpResultsDecline">
+                <td>{{ index + 1 }}</td>
+                <td>{{rsvp.firstName}}</td>
+                <td>{{rsvp.lastName}}</td>
+                <td>{{rsvp.rsvpDecision}}</td>
+            </tr>
+        </table>
+        <h1 class="centered">RSVP Results - Montana</h1>
+        <table>
+            <tr>
+                <th></th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>RSVP</th>
+            </tr>
+            <tr v-for="(rsvp, index) of rsvpResultsMontana">
                 <td>{{ index + 1 }}</td>
                 <td>{{rsvp.firstName}}</td>
                 <td>{{rsvp.lastName}}</td>
@@ -19,7 +49,9 @@
     </div>
 </template>
 <script setup>
-    const rsvpResults = ref([]);
+    const rsvpResultsAccept = ref([]);
+    const rsvpResultsDecline = ref([]);
+    const rsvpResultsMontana = ref([]);
 
     function getRSVPResults() {
         fetch('/api/RSVPResults', {
@@ -31,7 +63,9 @@
             body: 'password'
         }).then((response) => response.json())
             .then((data) => {
-                rsvpResults.value = data.foundEntities;
+                rsvpResultsAccept.value = data.foundEntities.filter(x => x.rsvpDecision == 'Accept');
+                rsvpResultsDecline.value = data.foundEntities.filter(x => x.rsvpDecision == 'Decline');
+                rsvpResultsMontana.value = data.foundEntities.filter(x => x.rsvpDecision == 'Montana');
             })
             .catch((error) => {
             });
