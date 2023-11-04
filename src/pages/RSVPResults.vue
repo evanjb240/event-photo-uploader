@@ -60,7 +60,7 @@
                 <td>{{ index + 1 }}</td>
                 <td>{{rsvp.firstName}}</td>
                 <td>{{rsvp.lastName}}</td>
-                <td>{{rsvp.rsvpDecision}}</td>
+                <td>{{rsvp.code}}</td>
             </tr>
         </table>
     </div>
