@@ -54,7 +54,6 @@
                     
                     </div>
                     <div class="section" v-if="activeStep == 3" :class="{isActive: activeStep == 3 }">
-                        <h3>You can skip filling in the date and add it later!</h3>
                         <div v-for="invite of foundInvites" >
                             <div v-if="invite.rsvpDecision == 'Accept'">
                                 <div>

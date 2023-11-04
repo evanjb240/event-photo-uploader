@@ -32,7 +32,7 @@ namespace Events.Services
         {
             var tableClient = await GetTableClient();
 
-            var ret = tableClient.QueryAsync<RSVPEntity>(x=> x.RSVPDecision != "");
+            var ret = tableClient.QueryAsync<RSVPEntity>();
             if(ret == null){
                 return null;
             }

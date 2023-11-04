@@ -4,7 +4,7 @@
         <h1 class="centered">RSVP Results - Accept</h1>
         <table>
             <tr>
-                <th></th>
+                <th>{{rsvpResultsAccept.length}}</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Travel Dates</th>
@@ -21,7 +21,7 @@
         <h1 class="centered">RSVP Results - Decline</h1>
         <table>
             <tr>
-                <th></th>
+                <th>{{rsvpResultsDecline.length}}</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>RSVP</th>
@@ -36,12 +36,27 @@
         <h1 class="centered">RSVP Results - Montana</h1>
         <table>
             <tr>
-                <th></th>
+                <th>{{rsvpResultsMontana.length}}</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>RSVP</th>
             </tr>
             <tr v-for="(rsvp, index) of rsvpResultsMontana">
+                <td>{{ index + 1 }}</td>
+                <td>{{rsvp.firstName}}</td>
+                <td>{{rsvp.lastName}}</td>
+                <td>{{rsvp.rsvpDecision}}</td>
+            </tr>
+        </table>
+        <h1 class="centered">RSVP Results - No answer</h1>
+        <table>
+            <tr>
+                <th>{{rsvpResultsNoAnswer.length}}</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>RSVP</th>
+            </tr>
+            <tr v-for="(rsvp, index) of rsvpResultsNoAnswer">
                 <td>{{ index + 1 }}</td>
                 <td>{{rsvp.firstName}}</td>
                 <td>{{rsvp.lastName}}</td>
@@ -54,6 +69,7 @@
     const rsvpResultsAccept = ref([]);
     const rsvpResultsDecline = ref([]);
     const rsvpResultsMontana = ref([]);
+    const rsvpResultsNoAnswer = ref([]);
 
     function getRSVPResults() {
         fetch('/api/RSVPResults', {
@@ -68,6 +84,7 @@
                 rsvpResultsAccept.value = data.foundEntities.filter(x => x.rsvpDecision == 'Accept');
                 rsvpResultsDecline.value = data.foundEntities.filter(x => x.rsvpDecision == 'Decline');
                 rsvpResultsMontana.value = data.foundEntities.filter(x => x.rsvpDecision == 'Montana');
+                rsvpResultsNoAnswer.value = data.foundEntities.filter(x => !x.rsvpDecision);
             })
             .catch((error) => {
             });
