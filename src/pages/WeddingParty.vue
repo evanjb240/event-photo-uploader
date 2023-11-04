@@ -10,6 +10,7 @@
             <PartyMember class="image-item" name="Holly O'Shaughnessy" position="Bridesmaid" imageSrc="/images/WeddingParty/Holly_Bridesmaid.png"/>
             <PartyMember class="image-item" name="Delaney Wickum" position="Honorary Bridesmaid" imageSrc="/images/WeddingParty/Delaney_2.png"/>
             <PartyMember class="image-item" name="Maura Rich" position="Honorary Bridesmaid" imageSrc="/images/WeddingParty/Maura.png"/>
+            <PartyMember class="image-item" name="Brianna Oestreich" position="Honorary Bridesmaid" imageSrc="/images/WeddingParty/Brianna.png"/>
         </div>
         <div class="party-member-list">
             <div class="party">Groomsmen</div>
