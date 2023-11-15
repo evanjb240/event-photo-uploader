@@ -8,7 +8,25 @@
             <ul>
                 <li>Airport: Punta Cana International Airport, Dominican Republic (PUJ)</li>
                 <li>Resort: Dreams Royal Beach, Punta Cana</li>
-                <li>Dominican Travel Authorization Form: They used to give out paper copies to fill out on the plane. They do not do that anymore. Link below to fill out the form. Print, email, and/or screenshot the QR code(s) to yourself for you (and family).</li>
+                <li class="current-relevance">Dominican Travel Authorization Form: They used to give out paper copies to fill out on the plane. They do not do that anymore. Link below to fill out the form. Print, email, and/or screenshot the QR code(s) to yourself for you (and family).
+                    <ul>
+                        <b><u>Things needed prior to filling out:</u></b>
+                        <li>Passport</li>
+                        <li>Flight number <b>if you have 1+ stops, make sure to use the last flight number into PUJ</b></li>
+                        <li>Flight confirmation number/code</li>
+                    </ul>
+                    <ol>
+                        <b><u>How to fill out:</u></b>
+                        <li>Click the Dominican Travel Authorization Form link below</li>
+                        <li>Change the language to English</li>
+                        <li>Click E-ticket Application</li>
+                        <li>Click Nuevo eTicket</li>
+                        <li>Change the language to English again</li>
+                        <li>Pause after switching language! IF you are filling as a couple/family, you can do so, but make sure you click the toggle on the very first screen after clicking "Nuevo eTicket"</li>
+                        <li>Each person you fill out for, choose "Arrival to the Dominican Republic". Fill out the rest of the various forms</li>
+                        <li>When completed, download the pdf of your eTickets first, then send to email too.</li>
+                    </ol>
+                </li>
                 <li>Airport Transportation: 
                     <ul>
                         <li>You will probably need AT LEAST an hour to go through customs. Please book your ride for roughly 1 hour (no checked bags) or 1.5 hours (checked bags) after your flight lands.</li>
@@ -90,3 +108,8 @@
         </div>
     </div>
 </template>
+<style>
+.current-relevance{
+    background-color: lightgray;
+}
+</style>
