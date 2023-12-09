@@ -36,12 +36,6 @@ namespace Events.RSVp
                     entity.Code = entity.Code.ToUpper();
                 }
 
-                // entity.PartitionKey = entity.Code;
-                // string Id = Guid.NewGuid().ToString();
-                // entity.Id = Id;
-                // entity.RowKey = Id;
-                // var createdEntity = await _storageService.UpsertEntityAsync(entity);
-
                 var foundEntity = await _storageService.GetEntityAsync(entity.Code, entity.LastName);
                 if (foundEntity == null)
                 {
