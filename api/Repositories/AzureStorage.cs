@@ -136,7 +136,8 @@ namespace Events.Repositories
                 {
                     Uri = fullUri,
                     Name = name,
-                    ContentType = file.Properties.ContentType
+                    ContentType = file.Properties.ContentType,
+                    CreatedOn = file.Properties.CreatedOn
                 });
             }
 

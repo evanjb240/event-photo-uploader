@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 namespace Events.Models.Blob
 {
@@ -8,5 +9,6 @@ namespace Events.Models.Blob
         public string? Name { get; set; }
         public string? ContentType { get; set; }
         public Stream? Content { get; set; }
+        public DateTimeOffset? CreatedOn { get; set; }
     }
 }
