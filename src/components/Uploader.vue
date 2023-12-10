@@ -1,21 +1,21 @@
 <template>
     <DropZone class="drop-zone" @files-dropped="addFiles" #default="{ dropZoneActive }">
-    <label class="drop-zone__prompt" for="file-input">
-      <span class="drop-zone__span" v-if="dropZoneActive">
-        <span>Drop Them Here </span>
-        <span class="smaller">to add them</span>
-      </span>
-      <span class="drop-zone__span" v-else>
-        <span>Drag Your Files Here</span>
-        <span class="smaller">
-          or <strong><em>click here</em></strong> to select files
+      <label class="drop-zone__prompt" for="file-input">
+        <span class="drop-zone__span" v-if="dropZoneActive">
+          <span>Drop Them Here </span>
+          <span class="smaller">to add them</span>
         </span>
-      </span>
-    </label>
-    <input class="drop-zone__input" type="file" accept="image/*" id="file-input" multiple @change="onInputChange" />
-    <ul class="image-list" v-show="files.length">
-      <FilePreview v-for="file of files" :key="file.id" :file="file" tag="li" @cancel="removeFile" />
-    </ul>
+        <span class="drop-zone__span" v-else>
+          <span>Drag Your Files Here</span>
+          <span class="smaller">
+            or <strong><em>click here</em></strong> to select files
+          </span>
+        </span>
+      </label>
+      <input class="drop-zone__input" type="file" accept="image/*" id="file-input" multiple @change="onInputChange" />
+      <div class="image-list" v-show="files.length">
+        <FilePreview v-for="file of files" :key="file.id" :file="file" tag="div" @cancel="removeFile" />
+      </div>
     </DropZone>
     <div>
       <FormMessage v-if="uploadResult" :message="uploadResultMessage" :success-state="successState"></FormMessage>
@@ -51,7 +51,6 @@ function onInputChange(e) {
 }
 
 function upload() {
-  var data = new FormData();
 
   if (files.value.length == 0) {
     uploadResult.value = true;
@@ -60,23 +59,28 @@ function upload() {
     return;
   }
 
-  data.append('file', files.value[0].file);
+  files.value.forEach((file)=> {
+    var data = new FormData();
 
-  fetch('/api/Uploader', {
-    method: 'POST',
-    body: data
-  }).then((response) => response.json())
-    .then((data) => {
-      uploadResult.value = true;
-      uploadResultMessage.value = data.message;
-      successState.value = 'success';
-      removeFiles();
-      getUploads();
-    })
-    .catch((error) => {
-      uploadResult.value = true;
-      uploadResultMessage.value = error
-    });
+    data.append('file', file.file);
+    
+    fetch('/api/Uploader', {
+      method: 'POST',
+      body: data
+    }).then((response) => response.json())
+      .then((data) => {
+        uploadResult.value = true;
+        uploadResultMessage.value = data.message;
+        successState.value = 'success';
+      })
+      .catch((error) => {
+        uploadResult.value = true;
+        uploadResultMessage.value = error
+      });
+  })
+
+  removeFiles();
+  getUploads();
 }
 
 function getUploads() {
@@ -97,16 +101,16 @@ function getUploads() {
   margin: 20px;
   background-color: #ffffff;
   min-width: 200px;
-  height: 200px;
+  min-height: 200px;
   padding: 25px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
   font-size: 20px;
-  cursor: pointer;
   color: #cccccc;
   box-shadow: 0px 3px 6px #000000a8;
   opacity: 1;
@@ -124,15 +128,11 @@ function getUploads() {
 
 .drop-zone__prompt {
   width:100%;
-  height:100%;
+  min-height: 200px;
   display: block;
   text-align: center;
-  text-align: center;
   color: #807e7e;
-}
-
-ul {
-  list-style-type: none;
+  cursor: pointer;
 }
 
 .button-container {
@@ -149,5 +149,16 @@ ul {
   height: 50px;
   margin-top: 25px;
   margin-bottom: 50px;
+}
+
+.drop-zone-stack{
+  display:flex;
+  flex-direction: column;
+}
+.image-list{
+  display: flex;
+  gap:10px;
+  flex-flow:wrap;
+  justify-content: center;
 }
 </style>

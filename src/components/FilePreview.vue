@@ -1,6 +1,6 @@
 <template>
     <component :is="tag" >
-        <div class="container">
+        <div class="image-container">
             <img class="file-preview" :src="file.url" :alt="file.file.name" :title="file.file.name" />
             <button @click.stop="$emit('cancel', file)" class="close-icon btn" aria-label="Remove">X</button>
         </div>
@@ -16,13 +16,12 @@ defineProps({
 </script>
 
 <style scoped>
-.container {
+.image-container {
   position: relative;
-  width: 100%;
   max-width: 400px;
 }
 
-.container .btn {
+.image-container .btn {
   position: absolute;
   top: 5%;
   left: 5%;
@@ -38,7 +37,7 @@ defineProps({
   text-align: center;
 }
 
-.container .btn:hover {
+.image-container .btn:hover {
   background-color: black;
 }
 
