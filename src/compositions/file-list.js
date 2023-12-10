@@ -21,7 +21,7 @@ export default function () {
     }
 
     function removeFiles(){
-        files.value.map((file) => removeFile(file));
+        files.value = [];
     }
 
     return { files, addFiles, removeFile, removeFiles }
