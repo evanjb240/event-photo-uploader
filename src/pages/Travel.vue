@@ -17,8 +17,8 @@
             <h3 class="centered">Wedding Attire</h3>
             <p class="centered">Dressy-casual: We are still figuring out our wedding colors. More details to come!</p>
         </div>
-        <PalmSpacer :width="100" :height="60"/>
-        <div class="bottom-spacing">
+        <PalmSpacer v-if="false" :width="100" :height="60"/>
+        <div v-if="false" class="bottom-spacing">
             <h3 class="centered">RSVP Deadline</h3>
             <p class="centered">Please RSVP no later than October 31, 2023. Your RSVP is not considered complete until you have a room booked at the resort.</p>
             <p class="centered">Both the rehearsal dinner and wedding dinner will be buffet style. Please note any dietary restrictions when you RSVP.</p>

@@ -29,12 +29,13 @@ export default {
     <nav class="nav" :class="nav">
         <NuxtLink to="/" @click="nav = 'topnav'">Evan & Karla</NuxtLink>
         <NuxtLink to="/" @click="nav = 'topnav'">Home</NuxtLink>
+        <NuxtLink to="/FinalDetails" @click="nav = 'topnav'">Final Details</NuxtLink>
         <NuxtLink to="/Travel" @click="nav = 'topnav'">Travel Details</NuxtLink>
         <NuxtLink to="/Venue" @click="nav = 'topnav'">Venue</NuxtLink>
-        <NuxtLink to="/RSVP" @click="nav = 'topnav'">RSVP</NuxtLink>
+        <NuxtLink v-if="false" to="/RSVP" @click="nav = 'topnav'">RSVP</NuxtLink>
         <NuxtLink to="/WeddingParty" @click="nav = 'topnav'">Wedding Party</NuxtLink>
         <NuxtLink to="/FAQ" @click="nav = 'topnav'">FAQs</NuxtLink>
-        <NuxtLink to="/TipsAndTricks" @click="nav = 'topnav'">Tips and Tricks</NuxtLink>
+        <NuxtLink v-if="false" to="/TipsAndTricks" @click="nav = 'topnav'">Tips and Tricks</NuxtLink>
         <NuxtLink to="/GiftRegistry" @click="nav = 'topnav'">Gift Registry</NuxtLink>
         <NuxtLink to="/Uploader" @click="nav = 'topnav'">Photo Upload</NuxtLink>
         <a href="javascript:void(0);" @click="navBar" class="icon">

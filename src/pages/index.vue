@@ -5,7 +5,7 @@
             <div class="centered date">JANUARY 7, 2024</div>
             <div class="centered date">PUNTA CANA, DR</div>
         </div>
-        <HeroImage style="margin-top:30px;" text="RSVP" link="/RSVP" height="600px" :image="`url('/images/Karla-Evan-Lakefront-Dip.jpg')`" />
+        <HeroImage style="margin-top:30px;" text="Final Details" link="/FinalDetails" height="600px" :image="`url('/images/Karla-Evan-Lakefront-Dip.jpg')`" />
         <WeddingLogo/>
     </div>
 </template>
