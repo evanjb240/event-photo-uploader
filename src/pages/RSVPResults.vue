@@ -64,6 +64,9 @@
             </tr>
         </table>
     </div>
+    <div v-for="(rsvp, index) of rsvpResultsAccept">
+        <span>{{rsvp.firstName + ' ' + rsvp.lastName}}</span>
+    </div>
 </template>
 <script setup>
     const rsvpResultsAccept = ref([]);
