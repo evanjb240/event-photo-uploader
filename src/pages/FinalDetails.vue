@@ -75,8 +75,8 @@
                 <p>Examples of dressy casual for women include midi, maxi or sun dresses, skirts, or even dress pants with a statement blouse. For men, nice shorts or pants paired with a button down top (short or long sleeve), or polo.  All guests should feel free to experiment a bit more with patterns, colors, and materials. We recommend linen, but anything works! Remember the temperature will be in the 70-80s and we will be on the beach for a portion of the events.</p>
             </div>
         </div>
-        <PalmSpacer v-if="false" :width="100" :height="60"/>
-        <div v-if="false" class="bottom-spacing">
+        <PalmSpacer :width="100" :height="60"/>
+        <div class="bottom-spacing">
             <h3 class="centered">Timeline</h3>
             <p class="centered">Rehearsal dinner and wedding day timeline in section below!</p>
             <button class="accordion" @click="toggleTimelineAccordion()">View timeline details
@@ -84,9 +84,15 @@
                 <minus-icon size="20" v-show="showTimeline"></minus-icon>
             </button>
             <div class="current-relevance" v-show="showTimeline">
-                <p>Our dress code is dressy casual. We want everyone to feel comfortable and express themselves, but still look nice in photos. Think of dressy casual as allowing you to express yourself while looking a little fancy.</p>
-                <p>As our wedding favor to you, we will have some time set aside during the cocktail hour for you to have a professional photo taken with our greenery wall. So some guests may choose to dress more fancy for these photos - it is up to you!</p>
-                <p>Examples of dressy casual for women include midi, maxi or sun dresses, skirts, or even dress pants with a statement blouse. For men, nice shorts or pants paired with a button down top (short or long sleeve), or polo.  All guests should feel free to experiment a bit more with patterns, colors, and materials. We recommend linen, but anything works! Remember the temperature will be in the 70-80s and we will be on the beach for a portion of the events.</p>
+                <div class="centered" style="flex-direction: column;">
+                    <div style="padding:20px; border:1px; border-color:black; border-style:dashed; width:75%; margin-top:20px">
+                        <div>Rehearsal Dinner</div>
+                        <div>Dinner: 6:00PM - 8:00PM</div>
+                    </div>
+                    <div style="max-width:800px;">
+                        <img src="@/public/images/wedding-timeline.png" width="100%">
+                    </div>
+                </div>
             </div>
         </div>
         <PalmSpacer :width="100" :height="60"/>
