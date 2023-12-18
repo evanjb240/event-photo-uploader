@@ -89,8 +89,8 @@
                 <p>Examples of dressy casual for women include midi, maxi or sun dresses, skirts, or even dress pants with a statement blouse. For men, nice shorts or pants paired with a button down top (short or long sleeve), or polo.  All guests should feel free to experiment a bit more with patterns, colors, and materials. We recommend linen, but anything works! Remember the temperature will be in the 70-80s and we will be on the beach for a portion of the events.</p>
             </div>
         </div>
-        <PalmSpacer v-if="false" :width="100" :height="60"/>
-        <div v-if="false" class="bottom-spacing">
+        <PalmSpacer :width="100" :height="60"/>
+        <div class="bottom-spacing">
             <h3 class="centered">Menus</h3>
             <p class="centered">Rehearsal dinner and wedding day menus below!</p>
             <button class="accordion" @click="toggleMenuAccordion()">View Menus
@@ -98,9 +98,54 @@
                 <minus-icon size="20" v-show="showMenus"></minus-icon>
             </button>
             <div class="current-relevance" v-show="showMenus">
-                <p>Our dress code is dressy casual. We want everyone to feel comfortable and express themselves, but still look nice in photos. Think of dressy casual as allowing you to express yourself while looking a little fancy.</p>
-                <p>As our wedding favor to you, we will have some time set aside during the cocktail hour for you to have a professional photo taken with our greenery wall. So some guests may choose to dress more fancy for these photos - it is up to you!</p>
-                <p>Examples of dressy casual for women include midi, maxi or sun dresses, skirts, or even dress pants with a statement blouse. For men, nice shorts or pants paired with a button down top (short or long sleeve), or polo.  All guests should feel free to experiment a bit more with patterns, colors, and materials. We recommend linen, but anything works! Remember the temperature will be in the 70-80s and we will be on the beach for a portion of the events.</p>
+                <div class="menu-list">
+                    <div>
+                        <h4>Rehearsal Dinner</h4>
+                        <ul>
+                            <li>Salad Bar</li>
+                            <li>Coleslaw</li>
+                            <li>Tomatoes with Parmesan</li>
+                            <li>Pasta Salad</li>
+                            <li>Shrimp Ceviche</li>
+                            <li>Vegetable Soup</li>
+                            <li>Rice with Bell Peppers</li>
+                            <li>Mixed Vegetables</li>
+                            <li>Chicken Brochette</li>
+                            <li>Grilled Mahi Mahi</li>
+                            <li>Baby Back Ribs</li>
+                            <li>Assorted Pastries & Fruit Salad</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Cocktail Hour Appetizers</h4>
+                        <ul>
+                            <li>Crab Canape</li>
+                            <li>Assorted Sushi</li>
+                            <li>Prunes stuffed with bacon</li>
+                            <li>Mini beef brochette</li>
+                            <li>Salad Bar</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Wedding Buffet Dinner</h4>
+                        <ul>
+                            <li>Salad Bar</li>
+                            <li>Stuffed Tomato with Shrimp</li>
+                            <li>Caesar Salad</li>
+                            <li>Crab and Avocado Salad</li>
+                            <li>Assorted Cheeses & Cold Cuts</li>
+                            <li>Roasted Potatoes with Fine Herbs</li>
+                            <li>Mixed Vegetables Provencal</li>
+                            <li>Rice with Asparagus</li>
+                            <li>Flank Steak with Bordelaise Sauce</li>
+                            <li>Salmon Hollandaise</li>
+                            <li>Chicken Cordon Bleu</li>
+                            <li>Strawberry Pie</li>
+                            <li>Chocolate Cheesecake</li>
+                            <li>Eclair Filled with Chocolate</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <PalmSpacer :width="100" :height="60"/>
@@ -222,5 +267,15 @@ function toggleReminderAccordion(){
 
 .red{
     color:red;
+}
+
+.menu-list{
+    display:flex;
+}
+
+@media screen and (max-width: 800px) {
+  .menu-list {
+    flex-direction:column;
+  }
 }
 </style>
