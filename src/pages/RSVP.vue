@@ -8,7 +8,10 @@
             Please use your last name and RSVP Key from your the save the date email and/or invitation.
         </p>
         <p class="centered">
-            Please RSVP by October 31, 2023. <b>You may partially fill in anything and come back later to edit!</b>
+            <b>You may partially fill in anything and come back later to edit!</b>
+        </p>
+        <p class="centered">
+            Please RSVP for Montana by June 30th, 2024
         </p>
         <RSVPForm/>
         <WeddingLogo/>

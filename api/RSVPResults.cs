@@ -19,7 +19,7 @@ namespace Events.RSVp
         {
             try
             {
-                string requestBody = String.Empty;
+                string requestBody = string.Empty;
                 using (StreamReader streamReader =  new  StreamReader(req.Body))
                 {
                     requestBody = await streamReader.ReadToEndAsync();
