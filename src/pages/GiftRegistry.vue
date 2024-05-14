@@ -5,28 +5,13 @@
         </h1>
         <div class="centered">
             <p>
-              <b>Your presence and time with us in Punta Cana is truly enough.</b> However, if you still wish to send a gift, we are registered at Target, Amazon, and Crate & Barrel. Please click the store below to be directed to the registry.  
+              We will be flying to Montana and will have very limited space. As such, we are respectfully asking for monetary gifts only, if you so choose.  
             </p>
         </div>
-        <div class="card-list">
-          <div class="centered">
-            <a class="card" style="min-width:100px" href="https://www.target.com/gift-registry/gift/karla-and-evan" target="_blank"><img src="@/public/images/TargetLogo.jpg" width="75" height="75"></a>
-          </div>
-          <div class="centered">
-            <a class="card" style="min-width:175px" href="https://www.amazon.com/wedding/share/karla-and-evan" target="_blank"><img src="@/public/images/AmazonLogo.webp" width="150" height="50"></a>
-          </div>
-          <div class="centered">
-            <a class="card" style="min-width:175px" href="https://www.crateandbarrel.com/gift-registry/karla-nettleton-and-evan-bauer/r6731405" target="_blank"><img src="@/public/images/Crate-Barrel-Logo.png" width="150" height="80"></a>
-          </div>
-          <div class="centered">
-            <a class="card" style="min-width:175px" href="https://www.menards.com/main/registrydetail.html?registryId=179207979&lastName=Bauer" target="_blank"><img src="@/public/images/Menards-logo.png" width="150" height="80"></a>
-          </div>
-        </div>
-        <p class="centered">
-            For those who wish to give an electronic cash gift, we've set up a Cash App destination below!
-        </p>
         <div class="centered">
-          <a class="cashapp" style="min-width:175px" href="https://cash.app/$EvanKarlaWedding/25.00" target="_blank"><img src="@/public/images/CashApp.png" width="175" height="225"></a>
+          <p>
+              Bring your dollars though! The reception will include ways for you to provide your monetary gifts. Get ready to do the dollar dances with the bride and groom, and "vote" on how we should spend your gift!
+            </p>
         </div>
         <WeddingLogo/>
     </div>
