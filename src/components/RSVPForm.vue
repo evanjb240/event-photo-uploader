@@ -27,19 +27,13 @@
                         <div v-for="invite of foundInvites">
                             <h3>Will {{invite.firstName}} {{invite.lastName}} attend?</h3>
                             <div class="row cf">
-                                <div class="four col">
+                                <div class="six col">
                                     <input type="radio" :name="`rsvp_montana${invite.rowKey}`" :id="`rsvp_montana${invite.rowKey}`" value="Montana" v-model="invite.rsvpDecision">
                                     <label :for="`rsvp_montana${invite.rowKey}`">
                                         <h4 class="centered">Montana Reception</h4>
                                     </label>
                                 </div>
-                                <div class="four col">
-                                    <input type="radio" :name="`rsvp_wisconsin${invite.rowKey}`" :id="`rsvp_wisconsin${invite.rowKey}`" value="Wisconsin" v-model="invite.rsvpDecision">
-                                    <label :for="`rsvp_wisconsin${invite.rowKey}`">
-                                        <h4 class="centered">Wisconsin</h4>
-                                    </label>
-                                </div>
-                                <div class="four col">
+                                <div class="six col">
                                     <input type="radio" :name="`rsvp_decline${invite.rowKey}`" :id="`rsvp_decline${invite.rowKey}`" value="Decline" v-model="invite.rsvpDecision">
                                     <label :for="`rsvp_decline${invite.rowKey}`">
                                         <h4 class="centered">Regretfully Decline</h4>
