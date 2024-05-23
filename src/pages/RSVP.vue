@@ -1,5 +1,6 @@
 <template>
     <div>
+        <HeroImage style="margin-top:30px;" height="300px" :image="`url('/images/detail-shot.jpeg')`" />
         <h1 class="centered">RSVP</h1>
         <p class="centered">
             If you're responding for you and a guest (or your family), you'll be able to RSVP for your entire group.

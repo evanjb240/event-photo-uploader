@@ -5,13 +5,14 @@
         </h1>
         <div class="centered">
             <p>
-              We will be flying to Montana and will have very limited space. As such, we are respectfully asking for monetary gifts only, if you so choose.  
+              Thank you so much for always being there for us. Your presence is the greatest gift. However, if you choose to honor us with a gift, we respectfully ask for a monetary contribution to our future together. We will be flying to Montana and will have very limited space.  
             </p>
         </div>
         <div class="centered">
-          <p>
-              Bring your dollars though! The reception will include ways for you to provide your monetary gifts. Get ready to do the dollar dances with the bride and groom, and "vote" on how we should spend your gift!
-            </p>
+          <p>We highly encourage you to bring your dollars! A wishing well will be available at the reception for your contributions and best wishes. The wishing well will include collection boxes for a few of our life goals. Our guests will be able to contribute to the life goal they most want to see us accomplish next. We will tally the boxes up and announce a winner. We also plan on doing dollar dances with the Bride and Groom.</p>
+        </div>
+        <div class="centered">
+          <p>Thank you for your continued support and love. We cannot wait to celebrate with you all!</p>
         </div>
         <WeddingLogo/>
     </div>

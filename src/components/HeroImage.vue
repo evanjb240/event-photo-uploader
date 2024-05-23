@@ -22,7 +22,7 @@ const props = defineProps({
   background: v-bind("props.image") no-repeat center center; 
   background-size: cover;
   background-blend-mode: lighten;
-  min-height:350px;
+  min-height:200px;
   display:flex;
   align-items:center;
   flex-direction: column;

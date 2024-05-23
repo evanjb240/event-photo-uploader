@@ -48,6 +48,11 @@ h1 {
 	font-size: 60px;
 	margin-bottom: 30px;
 }
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 40px;
+    }
+}
 h2,h3,nav {
 	font-family: 'Barlow CR';
 }

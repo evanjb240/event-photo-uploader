@@ -71,7 +71,10 @@
                                 <label><b>{{`${invite.firstName} ${invite.lastName}`}}</b>, we're sorry to hear that you will not be coming!</label>
                             </div>
                             <div v-if="invite.rsvpDecision == 'Montana'">
-                                <label><b>{{`${invite.firstName} ${invite.lastName}`}}</b>, we're still working on details for a Montana reception and will send out a separate invitation later!</label>
+                                <label><b>{{`${invite.firstName} ${invite.lastName}`}}</b>, we're glad you can make it! Check out the      
+                                    <NuxtLink class="page-link" to="/Montana">Montana page</NuxtLink>
+                                    for more details as they emerge!
+                                </label>
                             </div>
                         </div>
                         <form @submit.prevent="submit">
@@ -161,8 +164,12 @@ a{
   text-decoration: none;
 }
 
-p, li, a{
+p, li{
   font-size: 14px;
+}
+
+.page-link{
+    text-decoration: underline;
 }
 
 fieldset{

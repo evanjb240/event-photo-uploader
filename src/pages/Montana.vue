@@ -14,7 +14,7 @@
                 </div>
                 <div>
                     <div class="primary-text hero-text centered">
-                        <NuxtLink class="hero-action" to="/RSVP">RSVP</NuxtLink>
+                        <NuxtLink class="hero-action" style="max-width: 125px" to="/RSVP">RSVP</NuxtLink>
                     </div>
                 </div>
             </div>
