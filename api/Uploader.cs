@@ -24,7 +24,7 @@ namespace Events.Uploader
 
                 if (formData?.Files?.Count > 0)
                 {
-                    AzureStorage _blobStorage = new AzureStorage(Environment.GetEnvironmentVariable("UploadStorage"), "profile-uploads");
+                    AzureStorage _blobStorage = new AzureStorage(Environment.GetEnvironmentVariable("UploadStorage"), "event-before");
 
                     var file = formData.Files[0];
                     var upload = await _blobStorage.UploadAsync(file);

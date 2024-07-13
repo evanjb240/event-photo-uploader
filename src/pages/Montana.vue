@@ -40,7 +40,9 @@
                     <div>
                         <h4>Food Menu (buffet style)</h4>
                         <ul class="unordered-list">
-                            <li>TBD</li>
+                            <li>Pulled pork in a Huckleberry sauce</li>
+                            <li>Pulled chicken in a Huckleberry sauce</li>
+                            <li>Three salad options</li>
                         </ul>
                     </div>
                 </div>

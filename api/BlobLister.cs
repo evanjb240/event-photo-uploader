@@ -23,7 +23,7 @@ namespace Events.Uploader
         {
             try
             {
-                AzureStorage storage = new AzureStorage(Environment.GetEnvironmentVariable("UploadStorage"), "profile-uploads");
+                AzureStorage storage = new AzureStorage(Environment.GetEnvironmentVariable("UploadStorage"), "event-before");
                 #nullable enable
                 List<BlobDTO>? files = await storage.ListAsync();
                 return new JsonResult(new {StatusCodes.Status200OK, files});
